@@ -1,0 +1,46 @@
+{
+  "seed": 201,
+  "kind": "large",
+  "effective_seed": 201,
+  "attempts_used": 1,
+  "rejected_attempts": [],
+  "n_nodes": 30,
+  "vehicles": 6,
+  "total_kg": 4890,
+  "utilization": 0.815,
+  "tight_nodes": [
+    5,
+    8,
+    10,
+    12,
+    13,
+    25
+  ],
+  "areas": [
+    "Westlands",
+    "Kilimani_UpperHill",
+    "Eastlands",
+    "Thika_Road",
+    "Mombasa_Road",
+    "Karen_Langata",
+    "CBD",
+    "Ngong_Road",
+    "Parklands_Pangani",
+    "Ruaka_Kiambu_Road"
+  ],
+  "congested_areas": [
+    "Westlands",
+    "Thika_Road",
+    "Mombasa_Road",
+    "CBD",
+    "Ngong_Road"
+  ],
+  "gate_strategy": "PARALLEL_CHEAPEST_INSERTION",
+  "first_solution_kes": 11458,
+  "demand_attempts": 2,
+  "matrix_mean": 41.6,
+  "matrix_max": 110,
+  "depot_leg_min": 15,
+  "depot_leg_max": 53,
+  "folder": "/content/drive/MyDrive/nairobi_vrp_matrix/data/instances/inst_201"
+}

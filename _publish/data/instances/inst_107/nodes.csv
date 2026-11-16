@@ -1,0 +1,20 @@
+node_id,name,cluster,lat,lon,congested_corridor,demand_kg,demand_tier,est_direct_min,service_min,tight_window,tw_open,tw_close,open_clock,close_clock
+0,Industrial Area Depot,Depot,-1.305,36.85,False,0,depot,0,0,False,0,600,07:00,17:00
+1,Westlands_1,Westlands,-1.266179,36.795484,True,100,small,38,11,True,435,485,14:15,15:05
+2,Westlands_2,Westlands,-1.277238,36.805348,True,160,medium,30,13,False,399,473,13:39,14:53
+3,Westlands_3,Westlands,-1.263319,36.814662,True,270,medium,31,16,False,28,92,07:28,08:32
+4,Kilimani_UpperHill_1,Kilimani_UpperHill,-1.290254,36.813963,False,60,small,14,10,False,72,161,08:12,09:41
+5,Kilimani_UpperHill_2,Kilimani_UpperHill,-1.294733,36.807513,False,130,small,16,12,False,138,252,09:18,11:12
+6,Kilimani_UpperHill_3,Kilimani_UpperHill,-1.28332,36.806442,False,130,small,17,12,False,14,100,07:14,08:40
+7,Mombasa_Road_1,Mombasa_Road,-1.33138,36.897183,True,390,large,31,20,False,319,416,12:19,13:56
+8,Mombasa_Road_2,Mombasa_Road,-1.33806,36.915481,True,380,large,41,19,False,174,266,09:54,11:26
+9,Mombasa_Road_3,Mombasa_Road,-1.321687,36.887211,True,260,medium,23,16,False,150,243,09:30,11:03
+10,CBD_1,CBD,-1.281712,36.828201,True,120,small,18,12,False,208,293,10:28,11:53
+11,CBD_2,CBD,-1.282495,36.830036,True,140,small,17,13,False,264,331,11:24,12:31
+12,CBD_3,CBD,-1.273825,36.826037,True,280,medium,22,17,True,482,542,15:02,16:02
+13,Parklands_Pangani_1,Parklands_Pangani,-1.268084,36.846019,False,80,small,13,11,False,16,87,07:16,08:27
+14,Parklands_Pangani_2,Parklands_Pangani,-1.255654,36.846922,False,120,small,18,12,True,407,457,13:47,14:37
+15,Parklands_Pangani_3,Parklands_Pangani,-1.264775,36.833877,False,130,small,16,12,False,13,86,07:13,08:26
+16,Ruaka_Kiambu_Road_1,Ruaka_Kiambu_Road,-1.199828,36.799559,False,290,medium,41,17,False,323,426,12:23,14:06
+17,Ruaka_Kiambu_Road_2,Ruaka_Kiambu_Road,-1.199431,36.812179,False,120,small,39,12,True,161,219,09:41,10:39
+18,Ruaka_Kiambu_Road_3,Ruaka_Kiambu_Road,-1.207629,36.797014,False,120,small,39,12,False,172,236,09:52,10:56

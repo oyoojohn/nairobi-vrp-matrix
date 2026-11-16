@@ -1,0 +1,20 @@
+node_id,name,cluster,lat,lon,congested_corridor,demand_kg,demand_tier,est_direct_min,service_min,tight_window,tw_open,tw_close,open_clock,close_clock
+0,Industrial Area Depot,Depot,-1.305,36.85,False,0,depot,0,0,False,0,600,07:00,17:00
+1,Westlands_1,Westlands,-1.258384,36.815625,True,110,small,33,12,False,321,388,12:21,13:28
+2,Westlands_2,Westlands,-1.27028,36.818092,True,140,small,27,13,False,85,167,08:25,09:47
+3,Westlands_3,Westlands,-1.258262,36.82437,True,270,medium,30,16,False,137,242,09:17,11:02
+4,Mombasa_Road_1,Mombasa_Road,-1.346986,36.876593,True,100,small,28,11,False,171,275,09:51,11:35
+5,Mombasa_Road_2,Mombasa_Road,-1.326134,36.86328,True,130,small,14,12,False,477,562,14:57,16:22
+6,Mombasa_Road_3,Mombasa_Road,-1.353355,36.88308,True,240,medium,33,15,True,104,159,08:44,09:39
+7,Karen_Langata_1,Karen_Langata,-1.336531,36.739119,False,120,small,40,12,False,162,272,09:42,11:32
+8,Karen_Langata_2,Karen_Langata,-1.324713,36.73423,False,220,medium,41,15,False,179,243,09:59,11:03
+9,Karen_Langata_3,Karen_Langata,-1.32891,36.735311,False,270,medium,41,16,False,344,436,12:44,14:16
+10,CBD_1,CBD,-1.297774,36.816061,True,140,small,20,13,False,397,503,13:37,15:23
+11,CBD_2,CBD,-1.289898,36.825085,True,350,large,17,19,True,390,448,13:30,14:28
+12,CBD_3,CBD,-1.284807,36.815481,True,140,small,23,13,False,467,540,14:47,16:00
+13,Ngong_Road_1,Ngong_Road,-1.299322,36.755337,True,260,medium,53,16,True,104,156,08:44,09:36
+14,Ngong_Road_2,Ngong_Road,-1.300729,36.768753,True,90,small,46,11,True,184,234,10:04,10:54
+15,Ngong_Road_3,Ngong_Road,-1.303745,36.764859,True,390,large,48,20,False,333,409,12:33,13:49
+16,Ruaka_Kiambu_Road_1,Ruaka_Kiambu_Road,-1.191282,36.786691,False,80,small,46,11,False,255,363,11:15,13:03
+17,Ruaka_Kiambu_Road_2,Ruaka_Kiambu_Road,-1.201393,36.784675,False,80,small,43,11,False,17,111,07:17,08:51
+18,Ruaka_Kiambu_Road_3,Ruaka_Kiambu_Road,-1.189413,36.794256,False,120,small,45,12,False,440,534,14:20,15:54

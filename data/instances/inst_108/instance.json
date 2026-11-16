@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "seed": 108,
+    "base_seed": 108,
+    "attempt": 0,
+    "clusters": [
+      {
+        "name": "Kilimani_UpperHill",
+        "lat": -1.290938,
+        "lon": 36.795191,
+        "nodes": 3,
+        "jitter_km": 1.5,
+        "congested": false
+      },
+      {
+        "name": "Eastlands",
+        "lat": -1.286617,
+        "lon": 36.889937,
+        "nodes": 3,
+        "jitter_km": 2.0,
+        "congested": false
+      },
+      {
+        "name": "Thika_Road",
+        "lat": -1.217466,
+        "lon": 36.89118,
+        "nodes": 3,
+        "jitter_km": 2.0,
+        "congested": true
+      },
+      {
+        "name": "Mombasa_Road",
+        "lat": -1.331443,
+        "lon": 36.893339,
+        "nodes": 3,
+        "jitter_km": 3.0,
+        "congested": true
+      },
+      {
+        "name": "Karen_Langata",
+        "lat": -1.339181,
+        "lon": 36.727793,
+        "nodes": 3,
+        "jitter_km": 2.5,
+        "congested": false
+      },
+      {
+        "name": "Ngong_Road",
+        "lat": -1.304554,
+        "lon": 36.76344,
+        "nodes": 3,
+        "jitter_km": 2.0,
+        "congested": true
+      }
+    ],
+    "n_vehicles": 4,
+    "capacity": 1000,
+    "n_nodes": 18,
+    "total_range_kg": [
+      3200,
+      3600
+    ]
+  },
+  "demand_attempts": 45
+}

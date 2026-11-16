@@ -1,0 +1,97 @@
+{
+  "spec": {
+    "seed": 202,
+    "base_seed": 202,
+    "attempt": 0,
+    "clusters": [
+      {
+        "name": "Westlands",
+        "lat": -1.269234,
+        "lon": 36.807673,
+        "nodes": 3,
+        "jitter_km": 1.5,
+        "congested": true
+      },
+      {
+        "name": "Kilimani_UpperHill",
+        "lat": -1.293592,
+        "lon": 36.805959,
+        "nodes": 3,
+        "jitter_km": 1.5,
+        "congested": false
+      },
+      {
+        "name": "Eastlands",
+        "lat": -1.290681,
+        "lon": 36.892847,
+        "nodes": 3,
+        "jitter_km": 2.0,
+        "congested": false
+      },
+      {
+        "name": "Thika_Road",
+        "lat": -1.22608,
+        "lon": 36.888436,
+        "nodes": 3,
+        "jitter_km": 2.0,
+        "congested": true
+      },
+      {
+        "name": "Mombasa_Road",
+        "lat": -1.333029,
+        "lon": 36.888642,
+        "nodes": 3,
+        "jitter_km": 3.0,
+        "congested": true
+      },
+      {
+        "name": "Karen_Langata",
+        "lat": -1.337281,
+        "lon": 36.736219,
+        "nodes": 3,
+        "jitter_km": 2.5,
+        "congested": false
+      },
+      {
+        "name": "CBD",
+        "lat": -1.283561,
+        "lon": 36.822414,
+        "nodes": 3,
+        "jitter_km": 1.0,
+        "congested": true
+      },
+      {
+        "name": "Ngong_Road",
+        "lat": -1.297643,
+        "lon": 36.753475,
+        "nodes": 3,
+        "jitter_km": 2.0,
+        "congested": true
+      },
+      {
+        "name": "Parklands_Pangani",
+        "lat": -1.258245,
+        "lon": 36.840106,
+        "nodes": 3,
+        "jitter_km": 1.2,
+        "congested": false
+      },
+      {
+        "name": "Ruaka_Kiambu_Road",
+        "lat": -1.205182,
+        "lon": 36.798733,
+        "nodes": 3,
+        "jitter_km": 2.0,
+        "congested": false
+      }
+    ],
+    "n_vehicles": 6,
+    "capacity": 1000,
+    "n_nodes": 30,
+    "total_range_kg": [
+      4800,
+      5400
+    ]
+  },
+  "demand_attempts": 1
+}

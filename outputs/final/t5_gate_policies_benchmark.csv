@@ -1,0 +1,9 @@
+mode,policy,total_cost_kes,total_breaches,total_minutes_late,scenarios_with_a_breach
+physical,static plan only,215429,41,1297,21
+physical,always adopt the dynamic plan,217364,10,214,8
+physical,gate G1 (approved rule),217704,9,211,7
+physical,gate G2 (analysis only),217704,9,211,7
+idealized,static plan only,215429,41,1297,21
+idealized,always adopt the dynamic plan,215802,7,78,6
+idealized,gate G1 (approved rule),216142,6,75,5
+idealized,gate G2 (analysis only),216142,6,75,5

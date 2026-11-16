@@ -1,0 +1,20 @@
+node_id,name,cluster,lat,lon,congested_corridor,demand_kg,demand_tier
+0,Industrial Area Depot,Depot,-1.305,36.85,False,0,depot
+1,Westlands_1,Westlands,-1.262846,36.799975,True,120,small
+2,Westlands_2,Westlands,-1.279143,36.806933,True,90,small
+3,Westlands_3,Westlands,-1.267933,36.8151,True,280,medium
+4,Kilimani_UpperHill_1,Kilimani_UpperHill,-1.305488,36.802649,False,130,small
+5,Kilimani_UpperHill_2,Kilimani_UpperHill,-1.292516,36.795395,False,100,small
+6,Kilimani_UpperHill_3,Kilimani_UpperHill,-1.297654,36.807375,False,270,medium
+7,Eastlands_1,Eastlands,-1.300973,36.899384,False,330,large
+8,Eastlands_2,Eastlands,-1.276124,36.89471,False,220,medium
+9,Eastlands_3,Eastlands,-1.282763,36.905357,False,70,small
+10,Thika_Road_1,Thika_Road,-1.232066,36.878902,True,140,small
+11,Thika_Road_2,Thika_Road,-1.207575,36.88042,True,130,small
+12,Thika_Road_3,Thika_Road,-1.231045,36.903901,True,290,medium
+13,Mombasa_Road_1,Mombasa_Road,-1.312583,36.89813,True,140,small
+14,Mombasa_Road_2,Mombasa_Road,-1.329982,36.907774,True,150,small
+15,Mombasa_Road_3,Mombasa_Road,-1.344691,36.885664,True,180,medium
+16,Karen_Langata_1,Karen_Langata,-1.33894,36.749038,False,390,large
+17,Karen_Langata_2,Karen_Langata,-1.325654,36.72117,False,110,small
+18,Karen_Langata_3,Karen_Langata,-1.320669,36.735731,False,90,small

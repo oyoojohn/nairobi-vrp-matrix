@@ -1,0 +1,113 @@
+{
+  "scenario": {
+    "corridor": "Mombasa_Road",
+    "severity": 2.0,
+    "onset": 90,
+    "duration": 240,
+    "members": [
+      13,
+      14,
+      15
+    ]
+  },
+  "engine_version": "2.2",
+  "rates": {
+    "fuel_kes_per_km": 29.608800000000002,
+    "time_kes_per_min": 3.3333333333333335
+  },
+  "undisrupted": {
+    "total_kes": 7225,
+    "fuel_kes": 4125,
+    "time_kes": 3100,
+    "km": 139.4,
+    "duration_min": 930,
+    "mid_route_wait_min": 254,
+    "breaches": 0,
+    "breached_nodes": [],
+    "key_account_breaches": 0,
+    "total_late_min": 0,
+    "max_late_min": 0,
+    "vehicles_breaching": 0,
+    "shift_overrun_min": 0,
+    "sla_ok": true
+  },
+  "disrupted": {
+    "total_kes": 7331,
+    "fuel_kes": 4125,
+    "time_kes": 3206,
+    "km": 139.4,
+    "duration_min": 962,
+    "mid_route_wait_min": 205,
+    "breaches": 1,
+    "breached_nodes": [
+      7
+    ],
+    "key_account_breaches": 1,
+    "total_late_min": 23,
+    "max_late_min": 23,
+    "vehicles_breaching": 1,
+    "shift_overrun_min": 0,
+    "sla_ok": false
+  },
+  "attribution": [
+    {
+      "vehicle": 0,
+      "route": "0-5-1-4-6-0",
+      "legs_slowed": 0,
+      "added_travel_min": 0,
+      "buffer_absorbed_min": 0,
+      "extra_duration_min": 0,
+      "extra_kes": 0,
+      "late_stops": 0,
+      "late_min": 0,
+      "return_min": 341
+    },
+    {
+      "vehicle": 1,
+      "route": "0-15-7-9-13-14-0",
+      "legs_slowed": 4,
+      "added_travel_min": 81,
+      "buffer_absorbed_min": 49,
+      "extra_duration_min": 32,
+      "extra_kes": 106,
+      "late_stops": 1,
+      "late_min": 23,
+      "return_min": 337
+    },
+    {
+      "vehicle": 2,
+      "route": "0-16-17-18-2-3-0",
+      "legs_slowed": 0,
+      "added_travel_min": 0,
+      "buffer_absorbed_min": 0,
+      "extra_duration_min": 0,
+      "extra_kes": 0,
+      "late_stops": 0,
+      "late_min": 0,
+      "return_min": 509
+    },
+    {
+      "vehicle": 3,
+      "route": "0-8-12-10-11-0",
+      "legs_slowed": 0,
+      "added_travel_min": 0,
+      "buffer_absorbed_min": 0,
+      "extra_duration_min": 0,
+      "extra_kes": 0,
+      "late_stops": 0,
+      "late_min": 0,
+      "return_min": 496
+    }
+  ],
+  "breached_stops": [
+    {
+      "vehicle": 1,
+      "node": 7,
+      "name": "Eastlands_1",
+      "tight": true,
+      "arrive": 150,
+      "close": 127,
+      "late_min": 23
+    }
+  ]
+}

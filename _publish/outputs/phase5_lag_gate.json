@@ -1,0 +1,155 @@
+{
+  "lag_test": [
+    {
+      "seed": 102,
+      "corridor": "Ngong_Road",
+      "onset": 0,
+      "affected_departed": false,
+      "static_br": 4,
+      "static_late": 183,
+      "lag10_phys_br": 1,
+      "lag10_phys_late": 3,
+      "lag10_ideal_br": 1,
+      "lag10_ideal_late": 3,
+      "lag0_t_detect": 0,
+      "lag0_phys_br": 0,
+      "lag0_phys_late": 0,
+      "lag0_ideal_br": 0,
+      "lag0_ideal_late": 0,
+      "lag0_phys_cost_vs_static": -20,
+      "class_lag10": "D",
+      "class_lag0": "B"
+    },
+    {
+      "seed": 103,
+      "corridor": "Ngong_Road",
+      "onset": 90,
+      "affected_departed": false,
+      "static_br": 3,
+      "static_late": 131,
+      "lag10_phys_br": 1,
+      "lag10_phys_late": 40,
+      "lag10_ideal_br": 2,
+      "lag10_ideal_late": 41,
+      "lag0_t_detect": 90,
+      "lag0_phys_br": 1,
+      "lag0_phys_late": 30,
+      "lag0_ideal_br": 1,
+      "lag0_ideal_late": 30,
+      "lag0_phys_cost_vs_static": 448,
+      "class_lag10": "D",
+      "class_lag0": "D"
+    },
+    {
+      "seed": 108,
+      "corridor": "Mombasa_Road",
+      "onset": 90,
+      "affected_departed": false,
+      "static_br": 1,
+      "static_late": 25,
+      "lag10_phys_br": 1,
+      "lag10_phys_late": 3,
+      "lag10_ideal_br": 1,
+      "lag10_ideal_late": 3,
+      "lag0_t_detect": 90,
+      "lag0_phys_br": 1,
+      "lag0_phys_late": 3,
+      "lag0_ideal_br": 1,
+      "lag0_ideal_late": 3,
+      "lag0_phys_cost_vs_static": -257,
+      "class_lag10": "D",
+      "class_lag0": "D"
+    },
+    {
+      "seed": 201,
+      "corridor": "Thika_Road",
+      "onset": 90,
+      "affected_departed": true,
+      "static_br": 4,
+      "static_late": 101,
+      "lag10_phys_br": 3,
+      "lag10_phys_late": 67,
+      "lag10_ideal_br": 1,
+      "lag10_ideal_late": 27,
+      "lag0_t_detect": 90,
+      "lag0_phys_br": 2,
+      "lag0_phys_late": 52,
+      "lag0_ideal_br": 2,
+      "lag0_ideal_late": 29,
+      "lag0_phys_cost_vs_static": 353,
+      "class_lag10": "D",
+      "class_lag0": "D"
+    }
+  ],
+  "gate_policies": [
+    {
+      "mode": "physical",
+      "policy": "static plan only",
+      "total_cost_kes": 215429,
+      "total_breaches": 41,
+      "total_minutes_late": 1297,
+      "scenarios_with_a_breach": 21
+    },
+    {
+      "mode": "physical",
+      "policy": "always adopt the dynamic plan",
+      "total_cost_kes": 217364,
+      "total_breaches": 10,
+      "total_minutes_late": 214,
+      "scenarios_with_a_breach": 8
+    },
+    {
+      "mode": "physical",
+      "policy": "gate G1 (approved rule)",
+      "total_cost_kes": 217704,
+      "total_breaches": 9,
+      "total_minutes_late": 211,
+      "scenarios_with_a_breach": 7
+    },
+    {
+      "mode": "physical",
+      "policy": "gate G2 (analysis only)",
+      "total_cost_kes": 217704,
+      "total_breaches": 9,
+      "total_minutes_late": 211,
+      "scenarios_with_a_breach": 7
+    },
+    {
+      "mode": "idealized",
+      "policy": "static plan only",
+      "total_cost_kes": 215429,
+      "total_breaches": 41,
+      "total_minutes_late": 1297,
+      "scenarios_with_a_breach": 21
+    },
+    {
+      "mode": "idealized",
+      "policy": "always adopt the dynamic plan",
+      "total_cost_kes": 215802,
+      "total_breaches": 7,
+      "total_minutes_late": 78,
+      "scenarios_with_a_breach": 6
+    },
+    {
+      "mode": "idealized",
+      "policy": "gate G1 (approved rule)",
+      "total_cost_kes": 216142,
+      "total_breaches": 6,
+      "total_minutes_late": 75,
+      "scenarios_with_a_breach": 5
+    },
+    {
+      "mode": "idealized",
+      "policy": "gate G2 (analysis only)",
+      "total_cost_kes": 216142,
+      "total_breaches": 6,
+      "total_minutes_late": 75,
+      "scenarios_with_a_breach": 5
+    }
+  ],
+  "rules": {
+    "G1": "adopt if breaches fall, or tie at lower cost (approved)",
+    "G2": "G1 or breaches tie and minutes late fall (analysis only)"
+  },
+  "note": "idealized mode is a relaxation; dynamic routes are not stored"
+}

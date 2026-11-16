@@ -1,0 +1,68 @@
+{
+  "engine_version": "2.0",
+  "routes": [
+    [
+      0,
+      5,
+      1,
+      4,
+      6,
+      0
+    ],
+    [
+      0,
+      15,
+      7,
+      9,
+      13,
+      14,
+      0
+    ],
+    [
+      0,
+      16,
+      17,
+      18,
+      2,
+      3,
+      0
+    ],
+    [
+      0,
+      8,
+      12,
+      10,
+      11,
+      0
+    ]
+  ],
+  "verified_summary": {
+    "total_kes": 7225,
+    "fuel_kes": 4125,
+    "time_kes": 3100,
+    "km": 139.4,
+    "duration_min": 930,
+    "depot_hold_min": 721,
+    "mid_route_wait_min": 254,
+    "vehicles_used": 4,
+    "max_utilization": 0.96,
+    "min_utilization": 0.62,
+    "sla_ok": true
+  },
+  "rates": {
+    "fuel_kes_per_km": 29.608800000000002,
+    "time_kes_per_min": 3.3333333333333335
+  },
+  "solver": {
+    "strategy": "PARALLEL_CHEAPEST_INSERTION",
+    "metaheuristic": "GUIDED_LOCAL_SEARCH",
+    "time_limit_s": 8.0
+  },
+  "timings_s": {
+    "build": 0.043,
+    "solve": 8.001,
+    "verify": 0.015,
+    "wall": 8.06
+  },
+  "solver_objective_kes_approx": 7221.76
+}

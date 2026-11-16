@@ -1,0 +1,8 @@
+variant,gate_plan_kes,reopt_best,saving_vs_gate_pct,reopt_vs_stored_baseline_kes,depot_hold_min,mid_wait_min,km
+default,8026,7225,10.0,0,721,254,139.4
+depot hold priced (clocked),10084,9504,5.8,-125,0,989,135.1
+diesel -20%,7170,6392,10.9,-8,721,233,141.1
+diesel +20%,8882,8048,9.4,-1,706,273,137.9
+driver rate x0.5,6154,5657,8.1,-18,706,273,137.9
+driver rate x2,11774,10277,12.7,-48,721,233,141.1
+idle engine 1.5 L/h,10525,8300,21.1,-371,745,40,178.5

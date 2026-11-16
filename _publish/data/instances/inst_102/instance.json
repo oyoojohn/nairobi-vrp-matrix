@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "seed": 102,
+    "base_seed": 102,
+    "attempt": 0,
+    "clusters": [
+      {
+        "name": "Eastlands",
+        "lat": -1.288068,
+        "lon": 36.890195,
+        "nodes": 3,
+        "jitter_km": 2.0,
+        "congested": false
+      },
+      {
+        "name": "Thika_Road",
+        "lat": -1.22002,
+        "lon": 36.89531,
+        "nodes": 3,
+        "jitter_km": 2.0,
+        "congested": true
+      },
+      {
+        "name": "CBD",
+        "lat": -1.285913,
+        "lon": 36.815908,
+        "nodes": 3,
+        "jitter_km": 1.0,
+        "congested": true
+      },
+      {
+        "name": "Ngong_Road",
+        "lat": -1.294329,
+        "lon": 36.761555,
+        "nodes": 3,
+        "jitter_km": 2.0,
+        "congested": true
+      },
+      {
+        "name": "Parklands_Pangani",
+        "lat": -1.267998,
+        "lon": 36.836876,
+        "nodes": 3,
+        "jitter_km": 1.2,
+        "congested": false
+      },
+      {
+        "name": "Ruaka_Kiambu_Road",
+        "lat": -1.19973,
+        "lon": 36.804697,
+        "nodes": 3,
+        "jitter_km": 2.0,
+        "congested": false
+      }
+    ],
+    "n_vehicles": 4,
+    "capacity": 1000,
+    "n_nodes": 18,
+    "total_range_kg": [
+      3200,
+      3600
+    ]
+  },
+  "demand_attempts": 8
+}

@@ -1,0 +1,180 @@
+{
+  "scenario": {
+    "corridor": "Mombasa_Road",
+    "severity": 2.0,
+    "onset": 90,
+    "duration": 240,
+    "members": [
+      13,
+      14,
+      15
+    ]
+  },
+  "t_detect": 100,
+  "detection_lag_min": 10,
+  "tick_min": 5,
+  "static": {
+    "total_kes": 7331,
+    "fuel_kes": 4125,
+    "time_kes": 3206,
+    "km": 139.4,
+    "duration_min": 962,
+    "mid_route_wait_min": 205,
+    "breaches": 1,
+    "breached_nodes": [
+      7
+    ],
+    "key_account_breaches": 1,
+    "total_late_min": 23,
+    "max_late_min": 23,
+    "vehicles_breaching": 1,
+    "shift_overrun_min": 0,
+    "sla_ok": false
+  },
+  "undisrupted": {
+    "total_kes": 7225,
+    "fuel_kes": 4125,
+    "time_kes": 3100,
+    "km": 139.4,
+    "duration_min": 930,
+    "mid_route_wait_min": 254,
+    "breaches": 0,
+    "breached_nodes": [],
+    "key_account_breaches": 0,
+    "total_late_min": 0,
+    "max_late_min": 0,
+    "vehicles_breaching": 0,
+    "shift_overrun_min": 0,
+    "sla_ok": true
+  },
+  "dynamic": {
+    "physical": {
+      "routes": [
+        [
+          0,
+          5,
+          1,
+          4,
+          6,
+          0
+        ],
+        [
+          0,
+          15,
+          7,
+          9,
+          13,
+          14,
+          0
+        ],
+        [
+          0,
+          16,
+          17,
+          18,
+          2,
+          3,
+          0
+        ],
+        [
+          0,
+          8,
+          12,
+          10,
+          11,
+          0
+        ]
+      ],
+      "departures": [
+        191,
+        63,
+        235,
+        232
+      ],
+      "summary": {
+        "total_kes": 7331,
+        "fuel_kes": 4125,
+        "time_kes": 3206,
+        "km": 139.4,
+        "duration_min": 962,
+        "mid_route_wait_min": 205,
+        "breaches": 1,
+        "breached_nodes": [
+          7
+        ],
+        "key_account_breaches": 1,
+        "total_late_min": 23,
+        "max_late_min": 23,
+        "vehicles_breaching": 1,
+        "shift_overrun_min": 0,
+        "sla_ok": false
+      },
+      "pool_enroute": false,
+      "warm_started": true,
+      "wall_s": 5.094
+    },
+    "idealized": {
+      "routes": [
+        [
+          0,
+          5,
+          1,
+          4,
+          6,
+          0
+        ],
+        [
+          0,
+          15,
+          9,
+          8,
+          12,
+          10,
+          11,
+          0
+        ],
+        [
+          0,
+          16,
+          17,
+          18,
+          2,
+          3,
+          0
+        ],
+        [
+          0,
+          7,
+          13,
+          14,
+          0
+        ]
+      ],
+      "departures": [
+        191,
+        63,
+        235,
+        109
+      ],
+      "summary": {
+        "total_kes": 7697,
+        "fuel_kes": 4081,
+        "time_kes": 3616,
+        "km": 137.9,
+        "duration_min": 1085,
+        "mid_route_wait_min": 331,
+        "breaches": 0,
+        "breached_nodes": [],
+        "key_account_breaches": 0,
+        "total_late_min": 0,
+        "max_late_min": 0,
+        "vehicles_breaching": 0,
+        "shift_overrun_min": 0,
+        "sla_ok": true
+      },
+      "pool_enroute": true,
+      "warm_started": true,
+      "wall_s": 5.081
+    }
+  }
+}

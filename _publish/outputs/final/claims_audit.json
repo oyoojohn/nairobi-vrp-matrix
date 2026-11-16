@@ -1,0 +1,360 @@
+{
+  "checks": [
+    {
+      "check": "Dashboard tab 1 (solve) ran end to end",
+      "result": "PASS",
+      "detail": "('ok', 'Optimizer saving vs H1 zone sweep (simulated): 25.0% (like-for-like)')"
+    },
+    {
+      "check": "Dashboard tab 2 (disruption) ran end to end",
+      "result": "PASS",
+      "detail": "('ok', 'B (the dynamic re-solve restores the SLA)')"
+    },
+    {
+      "check": "Dashboard tab 3 (benchmark) ran end to end",
+      "result": "PASS",
+      "detail": "('ok', 'table')"
+    },
+    {
+      "check": "Final tables, figures and registry present",
+      "result": "PASS",
+      "detail": "12 files"
+    },
+    {
+      "check": "No source file changed since the results book was built",
+      "result": "PASS",
+      "detail": "17 files"
+    },
+    {
+      "check": "Claims audit: every quoted number matches the evidence",
+      "result": "PASS",
+      "detail": "54 of 54 claims"
+    }
+  ],
+  "claims": [
+    {
+      "where": "Summary",
+      "stated": "13",
+      "evidence_says": "13",
+      "ok": true
+    },
+    {
+      "where": "Summary",
+      "stated": "21%",
+      "evidence_says": "21%",
+      "ok": true
+    },
+    {
+      "where": "Summary",
+      "stated": "5%",
+      "evidence_says": "5%",
+      "ok": true
+    },
+    {
+      "where": "Summary",
+      "stated": "26",
+      "evidence_says": "26",
+      "ok": true
+    },
+    {
+      "where": "Summary",
+      "stated": "41",
+      "evidence_says": "41",
+      "ok": true
+    },
+    {
+      "where": "Summary",
+      "stated": "10",
+      "evidence_says": "10",
+      "ok": true
+    },
+    {
+      "where": "Summary",
+      "stated": "1,297",
+      "evidence_says": "1,297",
+      "ok": true
+    },
+    {
+      "where": "Summary",
+      "stated": "214",
+      "evidence_says": "214",
+      "ok": true
+    },
+    {
+      "where": "Summary",
+      "stated": "under 5.5 s",
+      "evidence_says": "under 5.5 s",
+      "ok": true
+    },
+    {
+      "where": "2",
+      "stated": "KES 227.76/L",
+      "evidence_says": "KES 227.76/L",
+      "ok": true
+    },
+    {
+      "where": "2",
+      "stated": "13 L per 100 km",
+      "evidence_says": "13 L per 100 km",
+      "ok": true
+    },
+    {
+      "where": "2",
+      "stated": "KES 200/hour",
+      "evidence_says": "KES 200/hour",
+      "ok": true
+    },
+    {
+      "where": "2",
+      "stated": "18 customers in 6 clusters",
+      "evidence_says": "18 customers in 6 clusters",
+      "ok": true
+    },
+    {
+      "where": "2",
+      "stated": "8-second search",
+      "evidence_says": "8-second search",
+      "ok": true
+    },
+    {
+      "where": "3",
+      "stated": "57 late stops, all leftovers",
+      "evidence_says": "57 late stops, all leftovers",
+      "ok": true
+    },
+    {
+      "where": "4.1",
+      "stated": "KES 7,225",
+      "evidence_says": "KES 7,225",
+      "ok": true
+    },
+    {
+      "where": "4.1",
+      "stated": "KES 8,026",
+      "evidence_says": "KES 8,026",
+      "ok": true
+    },
+    {
+      "where": "4.1",
+      "stated": "10.0%",
+      "evidence_says": "10.0%",
+      "ok": true
+    },
+    {
+      "where": "4.1",
+      "stated": "5.8%",
+      "evidence_says": "5.8%",
+      "ok": true
+    },
+    {
+      "where": "4.1",
+      "stated": "8.1% to 12.7%",
+      "evidence_says": "8.1% to 12.7%",
+      "ok": true
+    },
+    {
+      "where": "4.1",
+      "stated": "21.1%",
+      "evidence_says": "21.1%",
+      "ok": true
+    },
+    {
+      "where": "4.2",
+      "stated": "10",
+      "evidence_says": "10",
+      "ok": true
+    },
+    {
+      "where": "4.2",
+      "stated": "20.7%",
+      "evidence_says": "20.7%",
+      "ok": true
+    },
+    {
+      "where": "4.2",
+      "stated": "27.4%",
+      "evidence_says": "27.4%",
+      "ok": true
+    },
+    {
+      "where": "4.2",
+      "stated": "7 and 7 of 10",
+      "evidence_says": "7 and 7 of 10",
+      "ok": true
+    },
+    {
+      "where": "4.2",
+      "stated": "4.8%",
+      "evidence_says": "4.8%",
+      "ok": true
+    },
+    {
+      "where": "4.2",
+      "stated": "0.0% to 15.2%",
+      "evidence_says": "0.0% to 15.2%",
+      "ok": true
+    },
+    {
+      "where": "4.2",
+      "stated": "16.3%",
+      "evidence_says": "16.3%",
+      "ok": true
+    },
+    {
+      "where": "4.2",
+      "stated": "3",
+      "evidence_says": "3",
+      "ok": true
+    },
+    {
+      "where": "4.2",
+      "stated": "21.1%",
+      "evidence_says": "21.1%",
+      "ok": true
+    },
+    {
+      "where": "4.2",
+      "stated": "0 of 13",
+      "evidence_says": "0 of 13",
+      "ok": true
+    },
+    {
+      "where": "4.2",
+      "stated": "15.6%",
+      "evidence_says": "15.6%",
+      "ok": true
+    },
+    {
+      "where": "4.2",
+      "stated": "30.3%",
+      "evidence_says": "30.3%",
+      "ok": true
+    },
+    {
+      "where": "4.3",
+      "stated": "13 instances x 2 onsets = 26",
+      "evidence_says": "13 instances x 2 onsets = 26",
+      "ok": true
+    },
+    {
+      "where": "4.3",
+      "stated": "21",
+      "evidence_says": "21",
+      "ok": true
+    },
+    {
+      "where": "4.3",
+      "stated": "8",
+      "evidence_says": "8",
+      "ok": true
+    },
+    {
+      "where": "4.3",
+      "stated": "14 of 21 (67%)",
+      "evidence_says": "14 of 21 (67%)",
+      "ok": true
+    },
+    {
+      "where": "4.3",
+      "stated": "15 of 19 (79%)",
+      "evidence_says": "15 of 19 (79%)",
+      "ok": true
+    },
+    {
+      "where": "4.4",
+      "stated": "8.04 s",
+      "evidence_says": "8.04 s",
+      "ok": true
+    },
+    {
+      "where": "4.4",
+      "stated": "5.40 s",
+      "evidence_says": "5.40 s",
+      "ok": true
+    },
+    {
+      "where": "4.5",
+      "stated": "3 of 26",
+      "evidence_says": "3 of 26",
+      "ok": true
+    },
+    {
+      "where": "5",
+      "stated": "5",
+      "evidence_says": "5",
+      "ok": true
+    },
+    {
+      "where": "5",
+      "stated": "1 of 4",
+      "evidence_says": "1 of 4",
+      "ok": true
+    },
+    {
+      "where": "5",
+      "stated": "16 of 21",
+      "evidence_says": "16 of 21",
+      "ok": true
+    },
+    {
+      "where": "6",
+      "stated": "80% to 84%",
+      "evidence_says": "80% to 84%",
+      "ok": true
+    },
+    {
+      "where": "Sheet",
+      "stated": "8 of 10",
+      "evidence_says": "8 of 10",
+      "ok": true
+    },
+    {
+      "where": "Sheet",
+      "stated": "KES 2 and KES 112",
+      "evidence_says": "KES 2 and KES 112",
+      "ok": true
+    },
+    {
+      "where": "Sheet",
+      "stated": "0.3%",
+      "evidence_says": "0.3%",
+      "ok": true
+    },
+    {
+      "where": "Sheet",
+      "stated": "8.01 s",
+      "evidence_says": "8.01 s",
+      "ok": true
+    },
+    {
+      "where": "Sheet",
+      "stated": "5.13 s",
+      "evidence_says": "5.13 s",
+      "ok": true
+    },
+    {
+      "where": "Sheet",
+      "stated": "KES 1,935",
+      "evidence_says": "KES 1,935",
+      "ok": true
+    },
+    {
+      "where": "Sheet",
+      "stated": "31",
+      "evidence_says": "31",
+      "ok": true
+    },
+    {
+      "where": "Sheet",
+      "stated": "KES 62",
+      "evidence_says": "KES 62",
+      "ok": true
+    },
+    {
+      "where": "Sheet",
+      "stated": "0.9%",
+      "evidence_says": "0.9%",
+      "ok": true
+    }
+  ]
+}

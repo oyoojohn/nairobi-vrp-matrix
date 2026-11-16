@@ -1,0 +1,509 @@
+{
+  "numbers": {
+    "p2.baseline_cost_kes": {
+      "value": 7225,
+      "source": "outputs/baseline_plan.json",
+      "note": ""
+    },
+    "p2.gate_plan_cost_kes": {
+      "value": 8026,
+      "source": "outputs/cost_sensitivity.json",
+      "note": "unoptimized Phase 1 first solution, repriced"
+    },
+    "p2.saving_vs_gate_plan_pct": {
+      "value": 10.0,
+      "source": "outputs/cost_sensitivity.json",
+      "note": ""
+    },
+    "p2.optimizer_solve_wall_max_s": {
+      "value": 8.024,
+      "source": "outputs/kpi3_timing.json",
+      "note": ""
+    },
+    "p3a.default_static_cost_kes": {
+      "value": 7331,
+      "source": "outputs/disruption_static_default.json",
+      "note": ""
+    },
+    "p3a.default_static_breaches": {
+      "value": 1,
+      "source": "outputs/disruption_static_default.json",
+      "note": ""
+    },
+    "p3b.default_physical_cost_kes": {
+      "value": 7331,
+      "source": "outputs/dynamic_default.json",
+      "note": ""
+    },
+    "p3b.default_physical_breaches": {
+      "value": 1,
+      "source": "outputs/dynamic_default.json",
+      "note": ""
+    },
+    "p3b.default_idealized_cost_kes": {
+      "value": 7697,
+      "source": "outputs/dynamic_default.json",
+      "note": "relaxation"
+    },
+    "p3b.default_idealized_breaches": {
+      "value": 0,
+      "source": "outputs/dynamic_default.json",
+      "note": "relaxation"
+    },
+    "p3b.resolve_wall_max_physical_s": {
+      "value": 5.06,
+      "source": "outputs/kpi3_dynamic.json",
+      "note": ""
+    },
+    "p3b.resolve_wall_max_idealized_s": {
+      "value": 5.1,
+      "source": "outputs/kpi3_dynamic.json",
+      "note": ""
+    },
+    "p3c.class_counts": {
+      "value": {
+        "A": 8,
+        "B": 15,
+        "C": 3,
+        "D": 1
+      },
+      "source": "outputs/sensitivity_grid.json",
+      "note": ""
+    },
+    "p3c.static_breach_scenarios": {
+      "value": 19,
+      "source": "outputs/sensitivity_grid.json",
+      "note": ""
+    },
+    "p3c.kpi1_physical_restored": {
+      "value": 15,
+      "source": "outputs/sensitivity_grid.json",
+      "note": ""
+    },
+    "p3c.kpi1_idealized_restored": {
+      "value": 18,
+      "source": "outputs/sensitivity_grid.json",
+      "note": ""
+    },
+    "p3c.kpi2_physical_like_for_like_wins": {
+      "value": 4,
+      "source": "outputs/sensitivity_grid.json",
+      "note": ""
+    },
+    "p3c.budget_2s_same_outcome": {
+      "value": "53 of 54",
+      "source": "outputs/budget_lag_results.json",
+      "note": ""
+    },
+    "p3c.cold_start_same_outcome": {
+      "value": "38 of 38",
+      "source": "outputs/budget_lag_results.json",
+      "note": ""
+    },
+    "p3c.saving_range_across_cost_variants_pct": {
+      "value": [
+        5.8,
+        21.1
+      ],
+      "source": "outputs/cost_sensitivity.json",
+      "note": ""
+    },
+    "p3c.resolve_wall_max_grid_s": {
+      "value": 5.21,
+      "source": "outputs/sensitivity_grid.json",
+      "note": ""
+    },
+    "p3c.gate_g1_physical_total_cost_kes": {
+      "value": 197852,
+      "source": "outputs/gate_analysis.json",
+      "note": ""
+    },
+    "p3c.gate_g1_idealized_total_cost_kes": {
+      "value": 198903,
+      "source": "outputs/gate_analysis.json",
+      "note": ""
+    },
+    "p4.standard.save_vs_h1": {
+      "value": {
+        "n": 10,
+        "mean": 22.9,
+        "median": 23.8,
+        "min": 12.6,
+        "max": 32.8
+      },
+      "source": "outputs/benchmark_results.csv",
+      "note": ""
+    },
+    "p4.standard.save_vs_h1_like_for_like": {
+      "value": {
+        "n": 7,
+        "mean": 20.7,
+        "median": 23.7,
+        "min": 12.6,
+        "max": 27.3
+      },
+      "source": "outputs/benchmark_results.csv",
+      "note": ""
+    },
+    "p4.standard.save_vs_h2": {
+      "value": {
+        "n": 10,
+        "mean": 27.4,
+        "median": 27.5,
+        "min": 10.2,
+        "max": 44.1
+      },
+      "source": "outputs/benchmark_results.csv",
+      "note": ""
+    },
+    "p4.standard.save_vs_h2_like_for_like": {
+      "value": {
+        "n": 7,
+        "mean": 27.4,
+        "median": 26.8,
+        "min": 12.0,
+        "max": 37.5
+      },
+      "source": "outputs/benchmark_results.csv",
+      "note": ""
+    },
+    "p4.standard.save_vs_gate_first_solution": {
+      "value": {
+        "n": 10,
+        "mean": 4.8,
+        "median": 4.2,
+        "min": 0.0,
+        "max": 15.2
+      },
+      "source": "outputs/benchmark_results.csv",
+      "note": ""
+    },
+    "p4.standard.clocked_save_vs_h1": {
+      "value": {
+        "n": 10,
+        "mean": 16.3,
+        "median": 17.6,
+        "min": 7.4,
+        "max": 23.0
+      },
+      "source": "outputs/benchmark_results.csv",
+      "note": ""
+    },
+    "p4.standard.clocked_save_vs_h2": {
+      "value": {
+        "n": 10,
+        "mean": 21.9,
+        "median": 21.8,
+        "min": 9.6,
+        "max": 36.5
+      },
+      "source": "outputs/benchmark_results.csv",
+      "note": ""
+    },
+    "p4.large.save_vs_h1": {
+      "value": {
+        "n": 3,
+        "mean": 21.1,
+        "median": 19.1,
+        "min": 18.8,
+        "max": 25.5
+      },
+      "source": "outputs/benchmark_results.csv",
+      "note": ""
+    },
+    "p4.large.save_vs_h2": {
+      "value": {
+        "n": 3,
+        "mean": 33.9,
+        "median": 33.3,
+        "min": 31.0,
+        "max": 37.5
+      },
+      "source": "outputs/benchmark_results.csv",
+      "note": ""
+    },
+    "p4.human_cheaper_than_optimizer": {
+      "value": 0,
+      "source": "outputs/benchmark_results.csv",
+      "note": ""
+    },
+    "p4.optimizer_solve_wall_max_s": {
+      "value": 8.04,
+      "source": "outputs/benchmark_results.csv",
+      "note": ""
+    },
+    "p4.standard.distance_shorter_vs_h1_pct_mean": {
+      "value": 15.6,
+      "source": "outputs/benchmark_results.csv",
+      "note": ""
+    },
+    "p4.standard.duration_shorter_vs_h1_pct_mean": {
+      "value": 30.3,
+      "source": "outputs/benchmark_results.csv",
+      "note": ""
+    },
+    "p4.dis.class_counts": {
+      "value": {
+        "A": 5,
+        "B": 14,
+        "C": 3,
+        "D": 4
+      },
+      "source": "outputs/benchmark_disruption.json",
+      "note": ""
+    },
+    "p4.dis.static_breach_scenarios": {
+      "value": 21,
+      "source": "outputs/benchmark_disruption.json",
+      "note": ""
+    },
+    "p4.dis.kpi1_physical_restored": {
+      "value": 14,
+      "source": "outputs/benchmark_disruption.json",
+      "note": ""
+    },
+    "p4.dis.kpi1_idealized_restored": {
+      "value": 16,
+      "source": "outputs/benchmark_disruption.json",
+      "note": ""
+    },
+    "p4.dis.kpi2_physical_like_for_like_wins": {
+      "value": 3,
+      "source": "outputs/benchmark_disruption.json",
+      "note": ""
+    },
+    "p4.dis.h1.breaches": {
+      "value": 41,
+      "source": "outputs/benchmark_disruption.json",
+      "note": ""
+    },
+    "p4.dis.h1.minutes_late": {
+      "value": 1239,
+      "source": "outputs/benchmark_disruption.json",
+      "note": ""
+    },
+    "p4.dis.h2.breaches": {
+      "value": 50,
+      "source": "outputs/benchmark_disruption.json",
+      "note": ""
+    },
+    "p4.dis.h2.minutes_late": {
+      "value": 1732,
+      "source": "outputs/benchmark_disruption.json",
+      "note": ""
+    },
+    "p4.dis.opt_static.breaches": {
+      "value": 41,
+      "source": "outputs/benchmark_disruption.json",
+      "note": ""
+    },
+    "p4.dis.opt_static.minutes_late": {
+      "value": 1297,
+      "source": "outputs/benchmark_disruption.json",
+      "note": ""
+    },
+    "p4.dis.dyn_physical.breaches": {
+      "value": 10,
+      "source": "outputs/benchmark_disruption.json",
+      "note": ""
+    },
+    "p4.dis.dyn_physical.minutes_late": {
+      "value": 214,
+      "source": "outputs/benchmark_disruption.json",
+      "note": ""
+    },
+    "p4.dis.dyn_idealized.breaches": {
+      "value": 7,
+      "source": "outputs/benchmark_disruption.json",
+      "note": ""
+    },
+    "p4.dis.dyn_idealized.minutes_late": {
+      "value": 78,
+      "source": "outputs/benchmark_disruption.json",
+      "note": ""
+    },
+    "p4.dis.resolve_wall_max_s": {
+      "value": 5.4,
+      "source": "outputs/benchmark_disruption.json",
+      "note": ""
+    },
+    "p4.dis.hypothesis_counter_examples": {
+      "value": 5,
+      "source": "outputs/benchmark_disruption.json",
+      "note": "class B although an affected vehicle was already out"
+    },
+    "p5.lag0_restored_physical_of_4": {
+      "value": 1,
+      "source": "outputs/phase5_lag_gate.json",
+      "note": ""
+    },
+    "p5.lag_late_min_static_lag10_lag0_physical": {
+      "value": [
+        440,
+        113,
+        85
+      ],
+      "source": "outputs/phase5_lag_gate.json",
+      "note": ""
+    },
+    "p5.gate.physical.static_plan_only": {
+      "value": [
+        215429,
+        41,
+        1297
+      ],
+      "source": "outputs/phase5_lag_gate.json",
+      "note": "cost KES, breaches, minutes late"
+    },
+    "p5.gate.physical.always_adopt_the_dynamic_plan": {
+      "value": [
+        217364,
+        10,
+        214
+      ],
+      "source": "outputs/phase5_lag_gate.json",
+      "note": "cost KES, breaches, minutes late"
+    },
+    "p5.gate.physical.gate_G1": {
+      "value": [
+        217704,
+        9,
+        211
+      ],
+      "source": "outputs/phase5_lag_gate.json",
+      "note": "cost KES, breaches, minutes late"
+    },
+    "p5.gate.physical.gate_G2": {
+      "value": [
+        217704,
+        9,
+        211
+      ],
+      "source": "outputs/phase5_lag_gate.json",
+      "note": "cost KES, breaches, minutes late"
+    },
+    "p5.gate.idealized.static_plan_only": {
+      "value": [
+        215429,
+        41,
+        1297
+      ],
+      "source": "outputs/phase5_lag_gate.json",
+      "note": "cost KES, breaches, minutes late"
+    },
+    "p5.gate.idealized.always_adopt_the_dynamic_plan": {
+      "value": [
+        215802,
+        7,
+        78
+      ],
+      "source": "outputs/phase5_lag_gate.json",
+      "note": "cost KES, breaches, minutes late"
+    },
+    "p5.gate.idealized.gate_G1": {
+      "value": [
+        216142,
+        6,
+        75
+      ],
+      "source": "outputs/phase5_lag_gate.json",
+      "note": "cost KES, breaches, minutes late"
+    },
+    "p5.gate.idealized.gate_G2": {
+      "value": [
+        216142,
+        6,
+        75
+      ],
+      "source": "outputs/phase5_lag_gate.json",
+      "note": "cost KES, breaches, minutes late"
+    }
+  },
+  "sources": {
+    "config": {
+      "path": "config.json",
+      "sha256": "a42bc426e8ae",
+      "bytes": 3132
+    },
+    "baseline": {
+      "path": "outputs/baseline_plan.json",
+      "sha256": "577cdf661116",
+      "bytes": 1015
+    },
+    "kpi3_timing": {
+      "path": "outputs/kpi3_timing.json",
+      "sha256": "9d4568c83ec2",
+      "bytes": 1126
+    },
+    "default_static": {
+      "path": "outputs/disruption_static_default.json",
+      "sha256": "8cca2a7a9d9f",
+      "bytes": 2345
+    },
+    "default_dynamic": {
+      "path": "outputs/dynamic_default.json",
+      "sha256": "8050054d7c77",
+      "bytes": 3136
+    },
+    "kpi3_dynamic": {
+      "path": "outputs/kpi3_dynamic.json",
+      "sha256": "c3242e54a8bc",
+      "bytes": 6640
+    },
+    "grid": {
+      "path": "outputs/sensitivity_grid.json",
+      "sha256": "4c4eff0772ef",
+      "bytes": 20072
+    },
+    "budget_lag": {
+      "path": "outputs/budget_lag_results.json",
+      "sha256": "160525c83a23",
+      "bytes": 35947
+    },
+    "cost_sens": {
+      "path": "outputs/cost_sensitivity.json",
+      "sha256": "b92d5a5fde67",
+      "bytes": 4656
+    },
+    "gate_3c": {
+      "path": "outputs/gate_analysis.json",
+      "sha256": "ff07b7ec55c9",
+      "bytes": 2162
+    },
+    "summary_3c": {
+      "path": "outputs/phase3c_summary.json",
+      "sha256": "d7d0bfbfa42e",
+      "bytes": 357
+    },
+    "bench": {
+      "path": "outputs/benchmark_results.csv",
+      "sha256": "e1908b3a734c",
+      "bytes": 1784
+    },
+    "bench_dis": {
+      "path": "outputs/benchmark_disruption.json",
+      "sha256": "59b7bed8f121",
+      "bytes": 17856
+    },
+    "summary_4": {
+      "path": "outputs/phase4_summary.json",
+      "sha256": "37247d466f87",
+      "bytes": 397
+    },
+    "phase5": {
+      "path": "outputs/phase5_lag_gate.json",
+      "sha256": "b8d6f74254dd",
+      "bytes": 3951
+    },
+    "freeze": {
+      "path": "outputs/heuristics_freeze.json",
+      "sha256": "8040236f442f",
+      "bytes": 978
+    },
+    "manifest": {
+      "path": "data/instances/manifest.json",
+      "sha256": "34bcd4054dac",
+      "bytes": 12276
+    }
+  }
+}

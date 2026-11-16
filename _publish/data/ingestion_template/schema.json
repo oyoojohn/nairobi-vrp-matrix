@@ -1,0 +1,90 @@
+{
+  "schema": [
+    [
+      "nodes_input.csv",
+      "name",
+      "required",
+      "text, unique; the depot row may have any name"
+    ],
+    [
+      "nodes_input.csv",
+      "is_depot",
+      "required",
+      "0 or 1; exactly one row must be 1"
+    ],
+    [
+      "nodes_input.csv",
+      "lat",
+      "required",
+      "decimal degrees"
+    ],
+    [
+      "nodes_input.csv",
+      "lon",
+      "required",
+      "decimal degrees"
+    ],
+    [
+      "nodes_input.csv",
+      "demand_kg",
+      "required",
+      "number >= 0 and at most the vehicle capacity; depot row 0 or blank"
+    ],
+    [
+      "nodes_input.csv",
+      "tw_open",
+      "required (customers)",
+      "HH:MM, 24 h clock, same day"
+    ],
+    [
+      "nodes_input.csv",
+      "tw_close",
+      "required (customers)",
+      "HH:MM, later than tw_open"
+    ],
+    [
+      "nodes_input.csv",
+      "service_min",
+      "optional",
+      "minutes; default is 10-20 scaled by demand"
+    ],
+    [
+      "nodes_input.csv",
+      "cluster",
+      "optional",
+      "area label; default All"
+    ],
+    [
+      "nodes_input.csv",
+      "congested",
+      "optional",
+      "0 or 1; default 0 (used when travel times are estimated and for disruptions)"
+    ],
+    [
+      "fleet.json",
+      "n_vehicles, capacity_kg, shift_start, shift_end",
+      "required",
+      "integers and HH:MM clock strings"
+    ],
+    [
+      "travel_minutes.csv",
+      "(square matrix)",
+      "optional",
+      "node names as first column and header; minutes, rounded up; estimated if absent"
+    ],
+    [
+      "road_km.csv",
+      "(square matrix)",
+      "optional",
+      "same layout, kilometres; estimated from coordinates if absent"
+    ],
+    [
+      "routes_input.csv",
+      "vehicle, seq, name, depart",
+      "optional",
+      "historical routing; one row per stop; depart (HH:MM) on the first stop of each vehicle"
+    ]
+  ],
+  "engine_version": "2.8",
+  "template": "data/ingestion_template (instance 101 exported in this schema)"
+}

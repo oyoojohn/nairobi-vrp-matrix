@@ -1,0 +1,6 @@
+{
+  "n_vehicles": 4,
+  "capacity_kg": 1000,
+  "shift_start": "07:00",
+  "shift_end": "17:00"
+}

@@ -1,0 +1,10 @@
+comparison,n,mean,median,min,max
+standard.save_vs_h1,10,22.9,23.8,12.6,32.8
+standard.save_vs_h1_like_for_like,7,20.7,23.7,12.6,27.3
+standard.save_vs_h2,10,27.4,27.5,10.2,44.1
+standard.save_vs_h2_like_for_like,7,27.4,26.8,12.0,37.5
+standard.save_vs_gate_first_solution,10,4.8,4.2,0.0,15.2
+standard.clocked_save_vs_h1,10,16.3,17.6,7.4,23.0
+standard.clocked_save_vs_h2,10,21.9,21.8,9.6,36.5
+large.save_vs_h1,3,21.1,19.1,18.8,25.5
+large.save_vs_h2,3,33.9,33.3,31.0,37.5

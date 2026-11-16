@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "seed": 110,
+    "base_seed": 110,
+    "attempt": 0,
+    "clusters": [
+      {
+        "name": "Westlands",
+        "lat": -1.263508,
+        "lon": 36.806322,
+        "nodes": 3,
+        "jitter_km": 1.5,
+        "congested": true
+      },
+      {
+        "name": "Kilimani_UpperHill",
+        "lat": -1.295086,
+        "lon": 36.797129,
+        "nodes": 3,
+        "jitter_km": 1.5,
+        "congested": false
+      },
+      {
+        "name": "Karen_Langata",
+        "lat": -1.328864,
+        "lon": 36.727331,
+        "nodes": 3,
+        "jitter_km": 2.5,
+        "congested": false
+      },
+      {
+        "name": "CBD",
+        "lat": -1.285233,
+        "lon": 36.82325,
+        "nodes": 3,
+        "jitter_km": 1.0,
+        "congested": true
+      },
+      {
+        "name": "Ngong_Road",
+        "lat": -1.305651,
+        "lon": 36.76385,
+        "nodes": 3,
+        "jitter_km": 2.0,
+        "congested": true
+      },
+      {
+        "name": "Parklands_Pangani",
+        "lat": -1.256733,
+        "lon": 36.832395,
+        "nodes": 3,
+        "jitter_km": 1.2,
+        "congested": false
+      }
+    ],
+    "n_vehicles": 4,
+    "capacity": 1000,
+    "n_nodes": 18,
+    "total_range_kg": [
+      3200,
+      3600
+    ]
+  },
+  "demand_attempts": 1
+}

@@ -1,0 +1,61 @@
+{
+  "engine_version": "2.1",
+  "kpi3": {
+    "definition": "wall-clock = build + solve + verify; data load excluded",
+    "limit_s": 8,
+    "runs": 5,
+    "wall_s": [
+      8.01,
+      8.018,
+      8.01,
+      8.024,
+      8.01
+    ],
+    "max_wall_s": 8.024,
+    "kpi_limit_s": 10,
+    "passed": true,
+    "costs_kes": [
+      7225,
+      7225,
+      7225,
+      7225,
+      7225
+    ],
+    "distinct_plans": 1,
+    "data_load_s": 0.011
+  },
+  "convergence": [
+    {
+      "limit_s": 1,
+      "wall_s": 1.01,
+      "verified_cost_kes": 7225,
+      "km": 139.4,
+      "mid_wait_min": 254,
+      "vs_gate_plan": "-10.0%"
+    },
+    {
+      "limit_s": 2,
+      "wall_s": 2.01,
+      "verified_cost_kes": 7225,
+      "km": 139.4,
+      "mid_wait_min": 254,
+      "vs_gate_plan": "-10.0%"
+    },
+    {
+      "limit_s": 5,
+      "wall_s": 5.02,
+      "verified_cost_kes": 7225,
+      "km": 139.4,
+      "mid_wait_min": 254,
+      "vs_gate_plan": "-10.0%"
+    },
+    {
+      "limit_s": 8,
+      "wall_s": 8.01,
+      "verified_cost_kes": 7225,
+      "km": 139.4,
+      "mid_wait_min": 254,
+      "vs_gate_plan": "-10.0%"
+    }
+  ]
+}

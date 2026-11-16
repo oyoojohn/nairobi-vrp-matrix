@@ -1,0 +1,2580 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="referrer" content="strict-origin-when-cross-origin"><style>.leaflet-container{background:#eef1f4;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_2f1cdbb1fdfd0eacf0450527dd625eda {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    <div style="position:fixed;top:10px;left:60px;z-index:9999;background:white;padding:8px 12px;border:1px solid #888;border-radius:6px;font-family:Arial;font-size:12px;max-width:560px;"><b>Map 2. Optimizer vs a simulated dispatcher (benchmark instance 101, no disruption)</b><br>Optimizer: KES 7,520 | 154.3 km | 885 min | 0 breach(es), 0 min late<br>H1 zone sweep (simulated rule): KES 10,023 | 179.0 km | 1416 min | 0 breach(es), 0 min late<br>Toggle the layers at the top right. H1 is a simulated rule, not observed dispatcher behaviour.</div>
+    
+            <div class="folium-map" id="map_2f1cdbb1fdfd0eacf0450527dd625eda" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_2f1cdbb1fdfd0eacf0450527dd625eda = L.map(
+                "map_2f1cdbb1fdfd0eacf0450527dd625eda",
+                {
+                    center: [-1.305, 36.85],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_2f1cdbb1fdfd0eacf0450527dd625eda);
+
+            
+
+        
+    
+            var tile_layer_5a77744ed5b591000b45b065e3162118 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 16,
+  "maxNativeZoom": 16,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_5a77744ed5b591000b45b065e3162118.addTo(map_2f1cdbb1fdfd0eacf0450527dd625eda);
+        
+    
+            var tile_layer_14201a75ff3477220818c717e4c8fa23 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_14201a75ff3477220818c717e4c8fa23.addTo(map_2f1cdbb1fdfd0eacf0450527dd625eda);
+        
+    
+            var marker_0a138a6a0a156893a9d19dc8b5cb818f = L.marker(
+                [-1.305, 36.85],
+                {
+}
+            ).addTo(map_2f1cdbb1fdfd0eacf0450527dd625eda);
+        
+    
+            var icon_99137eaf30bd58d72db20cb14221f6dd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "black",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_0a138a6a0a156893a9d19dc8b5cb818f.bindTooltip(
+                `<div>
+                     Depot: Industrial Area Depot
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0a138a6a0a156893a9d19dc8b5cb818f.setIcon(icon_99137eaf30bd58d72db20cb14221f6dd);
+            
+    
+            var feature_group_6ecac54faca7c2e9502c03ac5b7f72dc = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_3f0b2b8321f30d4107e9d3e98bdecbf5 = L.circle(
+                [-1.270379, 36.814909],
+                {"bubblingMouseEvents": true, "color": "#C0392B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C0392B", "fillOpacity": 0.06, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2100.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_6ecac54faca7c2e9502c03ac5b7f72dc);
+        
+    
+            circle_3f0b2b8321f30d4107e9d3e98bdecbf5.bindTooltip(
+                `<div>
+                     Westlands (usual congestion)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_c388e22fc7c51eb43ef0c0cc8f8ec735 = L.circle(
+                [-1.281793, 36.826319],
+                {"bubblingMouseEvents": true, "color": "#C0392B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C0392B", "fillOpacity": 0.06, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1600.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_6ecac54faca7c2e9502c03ac5b7f72dc);
+        
+    
+            circle_c388e22fc7c51eb43ef0c0cc8f8ec735.bindTooltip(
+                `<div>
+                     CBD (usual congestion)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_8096ea623f0190bff176bf9c7505a4c1 = L.circle(
+                [-1.293346, 36.762762],
+                {"bubblingMouseEvents": true, "color": "#C0392B", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C0392B", "fillOpacity": 0.06, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2600.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_6ecac54faca7c2e9502c03ac5b7f72dc);
+        
+    
+            circle_8096ea623f0190bff176bf9c7505a4c1.bindTooltip(
+                `<div>
+                     Ngong_Road (usual congestion)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_6ecac54faca7c2e9502c03ac5b7f72dc.addTo(map_2f1cdbb1fdfd0eacf0450527dd625eda);
+        
+    
+            var feature_group_f0d317675a66c0b3412ced08d68a1e85 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var poly_line_9dbd45035543e1b3eac8758ad7c2e00e = L.polyline(
+                [[-1.305, 36.85], [-1.260235, 36.806577]],
+                {"bubblingMouseEvents": true, "color": "#1F3A93", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#1F3A93", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            poly_line_9dbd45035543e1b3eac8758ad7c2e00e.bindTooltip(
+                `<div>
+                     Optimizer | V0: Industrial Area Depot to Westlands_1 | 31 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_83442d6811525642d4a204f698be096e = L.polyline(
+                [[-1.260235, 36.806577], [-1.218003, 36.80463]],
+                {"bubblingMouseEvents": true, "color": "#1F3A93", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#1F3A93", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            poly_line_83442d6811525642d4a204f698be096e.bindTooltip(
+                `<div>
+                     Optimizer | V0: Westlands_1 to Ruaka_Kiambu_Road_2 | 21 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_832554512820c6c60ecae41d63a9a1fa = L.polyline(
+                [[-1.218003, 36.80463], [-1.2738, 36.821395]],
+                {"bubblingMouseEvents": true, "color": "#1F3A93", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#1F3A93", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            poly_line_832554512820c6c60ecae41d63a9a1fa.bindTooltip(
+                `<div>
+                     Optimizer | V0: Ruaka_Kiambu_Road_2 to Westlands_3 | 29 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_88537b82d0d5a09be038a856a7f693ce = L.polyline(
+                [[-1.2738, 36.821395], [-1.27714, 36.821897]],
+                {"bubblingMouseEvents": true, "color": "#1F3A93", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#1F3A93", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            poly_line_88537b82d0d5a09be038a856a7f693ce.bindTooltip(
+                `<div>
+                     Optimizer | V0: Westlands_3 to CBD_2 | 2 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_1241225653aaba4bfa9ac64d91dd4bb0 = L.polyline(
+                [[-1.27714, 36.821897], [-1.305, 36.85]],
+                {"bubblingMouseEvents": true, "color": "#1F3A93", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#1F3A93", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            poly_line_1241225653aaba4bfa9ac64d91dd4bb0.bindTooltip(
+                `<div>
+                     Optimizer | V0: CBD_2 to Industrial Area Depot | 19 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4e6084350f1d336f1e50538193aa8441 = L.marker(
+                [-1.260235, 36.806577],
+                {
+}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            var div_icon_cb21740c21be362a00a460e12889f92d = L.divIcon({
+  "html": "\u003cdiv style=\"background:#1F3A93;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:1px solid white;\"\u003e1\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_86cfebb6ae58b7da6290b2637b2224ea = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_80c30063c2ae819f21ea7ab659d8ec07 = $(`<div id="html_80c30063c2ae819f21ea7ab659d8ec07" style="width: 100.0%; height: 100.0%;"><b>Westlands_1</b> (Optimizer: vehicle 0, stop 1)<br>Arrive 08:59 | wait 0 min<br>Window 07:41 to 08:59<br><b>On time</b><br>Standard window</div>`)[0];
+                popup_86cfebb6ae58b7da6290b2637b2224ea.setContent(html_80c30063c2ae819f21ea7ab659d8ec07);
+            
+        
+
+        marker_4e6084350f1d336f1e50538193aa8441.bindPopup(popup_86cfebb6ae58b7da6290b2637b2224ea)
+        ;
+
+        
+    
+    
+            marker_4e6084350f1d336f1e50538193aa8441.bindTooltip(
+                `<div>
+                     V0-1: Westlands_1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4e6084350f1d336f1e50538193aa8441.setIcon(div_icon_cb21740c21be362a00a460e12889f92d);
+            
+    
+            var marker_e525b77544d4f10d7140577ad8db20ec = L.marker(
+                [-1.218003, 36.80463],
+                {
+}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            var div_icon_5fdad8fe92db44e3187c78749e94aa18 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#1F3A93;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:1px solid white;\"\u003e2\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_1c32394cc673aed30003be304dddd1f6 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_6e27fac527c471ee4863376af7121081 = $(`<div id="html_6e27fac527c471ee4863376af7121081" style="width: 100.0%; height: 100.0%;"><b>Ruaka_Kiambu_Road_2</b> (Optimizer: vehicle 0, stop 2)<br>Arrive 09:35 | wait 0 min<br>Window 09:01 to 10:45<br><b>On time</b><br>Standard window</div>`)[0];
+                popup_1c32394cc673aed30003be304dddd1f6.setContent(html_6e27fac527c471ee4863376af7121081);
+            
+        
+
+        marker_e525b77544d4f10d7140577ad8db20ec.bindPopup(popup_1c32394cc673aed30003be304dddd1f6)
+        ;
+
+        
+    
+    
+            marker_e525b77544d4f10d7140577ad8db20ec.bindTooltip(
+                `<div>
+                     V0-2: Ruaka_Kiambu_Road_2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e525b77544d4f10d7140577ad8db20ec.setIcon(div_icon_5fdad8fe92db44e3187c78749e94aa18);
+            
+    
+            var marker_eb98f684b1826add80a54154d0e9b06a = L.marker(
+                [-1.2738, 36.821395],
+                {
+}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            var div_icon_e23aeb7979d38ab3e559a903999add0b = L.divIcon({
+  "html": "\u003cdiv style=\"background:#1F3A93;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:3px solid black;\"\u003e3\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_ec160e6849494ac49471894b641e1688 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_27dc60fc15a51db7e62cd8bbd19ba693 = $(`<div id="html_27dc60fc15a51db7e62cd8bbd19ba693" style="width: 100.0%; height: 100.0%;"><b>Westlands_3</b> (Optimizer: vehicle 0, stop 3)<br>Arrive 10:22 | wait 0 min<br>Window 09:58 to 10:50<br><b>On time</b><br>KEY ACCOUNT</div>`)[0];
+                popup_ec160e6849494ac49471894b641e1688.setContent(html_27dc60fc15a51db7e62cd8bbd19ba693);
+            
+        
+
+        marker_eb98f684b1826add80a54154d0e9b06a.bindPopup(popup_ec160e6849494ac49471894b641e1688)
+        ;
+
+        
+    
+    
+            marker_eb98f684b1826add80a54154d0e9b06a.bindTooltip(
+                `<div>
+                     V0-3: Westlands_3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_eb98f684b1826add80a54154d0e9b06a.setIcon(div_icon_e23aeb7979d38ab3e559a903999add0b);
+            
+    
+            var marker_c8fd3b989f4d442253917f1a95b9eb13 = L.marker(
+                [-1.27714, 36.821897],
+                {
+}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            var div_icon_18be904c99eb95790489c661620d8e5a = L.divIcon({
+  "html": "\u003cdiv style=\"background:#1F3A93;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:3px solid black;\"\u003e4\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_160c3dbf95d9e1469d3228639c072ca3 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_23ea464ca246f8f129d5b24c2095916b = $(`<div id="html_23ea464ca246f8f129d5b24c2095916b" style="width: 100.0%; height: 100.0%;"><b>CBD_2</b> (Optimizer: vehicle 0, stop 4)<br>Arrive 10:36 | wait 16 min<br>Window 10:52 to 11:45<br><b>On time</b><br>KEY ACCOUNT</div>`)[0];
+                popup_160c3dbf95d9e1469d3228639c072ca3.setContent(html_23ea464ca246f8f129d5b24c2095916b);
+            
+        
+
+        marker_c8fd3b989f4d442253917f1a95b9eb13.bindPopup(popup_160c3dbf95d9e1469d3228639c072ca3)
+        ;
+
+        
+    
+    
+            marker_c8fd3b989f4d442253917f1a95b9eb13.bindTooltip(
+                `<div>
+                     V0-4: CBD_2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c8fd3b989f4d442253917f1a95b9eb13.setIcon(div_icon_18be904c99eb95790489c661620d8e5a);
+            
+    
+            var poly_line_880c83b3d8e60bf606a2bbd0a4c0b539 = L.polyline(
+                [[-1.305, 36.85], [-1.308241, 36.79137]],
+                {"bubblingMouseEvents": true, "color": "#D35400", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#D35400", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            poly_line_880c83b3d8e60bf606a2bbd0a4c0b539.bindTooltip(
+                `<div>
+                     Optimizer | V1: Industrial Area Depot to Kilimani_UpperHill_3 | 21 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_560a8b7c81f1f80ed788652d725d0158 = L.polyline(
+                [[-1.308241, 36.79137], [-1.333802, 36.740221]],
+                {"bubblingMouseEvents": true, "color": "#D35400", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#D35400", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            poly_line_560a8b7c81f1f80ed788652d725d0158.bindTooltip(
+                `<div>
+                     Optimizer | V1: Kilimani_UpperHill_3 to Karen_Langata_1 | 20 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_7d2a6912cdbd44bf3e58f641634c6aac = L.polyline(
+                [[-1.333802, 36.740221], [-1.290641, 36.74829]],
+                {"bubblingMouseEvents": true, "color": "#D35400", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#D35400", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            poly_line_7d2a6912cdbd44bf3e58f641634c6aac.bindTooltip(
+                `<div>
+                     Optimizer | V1: Karen_Langata_1 to Ngong_Road_2 | 21 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_4fa2d7979cf38d07eab8c3153ec22789 = L.polyline(
+                [[-1.290641, 36.74829], [-1.308377, 36.769625]],
+                {"bubblingMouseEvents": true, "color": "#D35400", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#D35400", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            poly_line_4fa2d7979cf38d07eab8c3153ec22789.bindTooltip(
+                `<div>
+                     Optimizer | V1: Ngong_Road_2 to Ngong_Road_1 | 13 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_74b1e888bb69aaaa8d4449414e50d36b = L.polyline(
+                [[-1.308377, 36.769625], [-1.308312, 36.772297]],
+                {"bubblingMouseEvents": true, "color": "#D35400", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#D35400", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            poly_line_74b1e888bb69aaaa8d4449414e50d36b.bindTooltip(
+                `<div>
+                     Optimizer | V1: Ngong_Road_1 to Ngong_Road_3 | 2 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_2e7fc6bf8b14bafb0034b15cae83c995 = L.polyline(
+                [[-1.308312, 36.772297], [-1.305, 36.85]],
+                {"bubblingMouseEvents": true, "color": "#D35400", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#D35400", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            poly_line_2e7fc6bf8b14bafb0034b15cae83c995.bindTooltip(
+                `<div>
+                     Optimizer | V1: Ngong_Road_3 to Industrial Area Depot | 37 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_004ce0e42624d73982b4d4c21abca0bd = L.marker(
+                [-1.308241, 36.79137],
+                {
+}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            var div_icon_5dabc52334fc10d552d2dfeebf2cf52c = L.divIcon({
+  "html": "\u003cdiv style=\"background:#D35400;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:1px solid white;\"\u003e1\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_a28531b2831425f6aec3a6aa6881691b = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_354acddd87c46a1ee445eaa17ae706c4 = $(`<div id="html_354acddd87c46a1ee445eaa17ae706c4" style="width: 100.0%; height: 100.0%;"><b>Kilimani_UpperHill_3</b> (Optimizer: vehicle 1, stop 1)<br>Arrive 08:42 | wait 0 min<br>Window 07:23 to 09:23<br><b>On time</b><br>Standard window</div>`)[0];
+                popup_a28531b2831425f6aec3a6aa6881691b.setContent(html_354acddd87c46a1ee445eaa17ae706c4);
+            
+        
+
+        marker_004ce0e42624d73982b4d4c21abca0bd.bindPopup(popup_a28531b2831425f6aec3a6aa6881691b)
+        ;
+
+        
+    
+    
+            marker_004ce0e42624d73982b4d4c21abca0bd.bindTooltip(
+                `<div>
+                     V1-1: Kilimani_UpperHill_3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_004ce0e42624d73982b4d4c21abca0bd.setIcon(div_icon_5dabc52334fc10d552d2dfeebf2cf52c);
+            
+    
+            var marker_10a961605a806866120e70a0c41b56f7 = L.marker(
+                [-1.333802, 36.740221],
+                {
+}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            var div_icon_3267b794f2062341794c82046d6c8e1c = L.divIcon({
+  "html": "\u003cdiv style=\"background:#D35400;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:3px solid black;\"\u003e2\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_15457b070fca97477c44d0df381d399a = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_d7222c590a7e0fde06d45b4f45784f4f = $(`<div id="html_d7222c590a7e0fde06d45b4f45784f4f" style="width: 100.0%; height: 100.0%;"><b>Karen_Langata_1</b> (Optimizer: vehicle 1, stop 2)<br>Arrive 09:19 | wait 0 min<br>Window 08:31 to 09:19<br><b>On time</b><br>KEY ACCOUNT</div>`)[0];
+                popup_15457b070fca97477c44d0df381d399a.setContent(html_d7222c590a7e0fde06d45b4f45784f4f);
+            
+        
+
+        marker_10a961605a806866120e70a0c41b56f7.bindPopup(popup_15457b070fca97477c44d0df381d399a)
+        ;
+
+        
+    
+    
+            marker_10a961605a806866120e70a0c41b56f7.bindTooltip(
+                `<div>
+                     V1-2: Karen_Langata_1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_10a961605a806866120e70a0c41b56f7.setIcon(div_icon_3267b794f2062341794c82046d6c8e1c);
+            
+    
+            var marker_4022afe375f1e7e0b10b376ba8824bd6 = L.marker(
+                [-1.290641, 36.74829],
+                {
+}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            var div_icon_0e01b5794aa2b7ae1eed66db43c6dd4b = L.divIcon({
+  "html": "\u003cdiv style=\"background:#D35400;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:1px solid white;\"\u003e3\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_51d52410e3e74901faaaebe283a993d3 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_c6b88a1b5e77b5d502c5574e62e3b55d = $(`<div id="html_c6b88a1b5e77b5d502c5574e62e3b55d" style="width: 100.0%; height: 100.0%;"><b>Ngong_Road_2</b> (Optimizer: vehicle 1, stop 3)<br>Arrive 09:51 | wait 0 min<br>Window 07:57 to 09:53<br><b>On time</b><br>Standard window</div>`)[0];
+                popup_51d52410e3e74901faaaebe283a993d3.setContent(html_c6b88a1b5e77b5d502c5574e62e3b55d);
+            
+        
+
+        marker_4022afe375f1e7e0b10b376ba8824bd6.bindPopup(popup_51d52410e3e74901faaaebe283a993d3)
+        ;
+
+        
+    
+    
+            marker_4022afe375f1e7e0b10b376ba8824bd6.bindTooltip(
+                `<div>
+                     V1-3: Ngong_Road_2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4022afe375f1e7e0b10b376ba8824bd6.setIcon(div_icon_0e01b5794aa2b7ae1eed66db43c6dd4b);
+            
+    
+            var marker_e42a2f1c6940272d0a7cb4a981dc9138 = L.marker(
+                [-1.308377, 36.769625],
+                {
+}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            var div_icon_c654eac3245e5454c13deda14ce876f9 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#D35400;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:1px solid white;\"\u003e4\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_eaf42f119cba5dbb0a7075f0492d26ee = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_412aee81db19432aeda9a90906fa5783 = $(`<div id="html_412aee81db19432aeda9a90906fa5783" style="width: 100.0%; height: 100.0%;"><b>Ngong_Road_1</b> (Optimizer: vehicle 1, stop 4)<br>Arrive 10:20 | wait 37 min<br>Window 10:57 to 12:57<br><b>On time</b><br>Standard window</div>`)[0];
+                popup_eaf42f119cba5dbb0a7075f0492d26ee.setContent(html_412aee81db19432aeda9a90906fa5783);
+            
+        
+
+        marker_e42a2f1c6940272d0a7cb4a981dc9138.bindPopup(popup_eaf42f119cba5dbb0a7075f0492d26ee)
+        ;
+
+        
+    
+    
+            marker_e42a2f1c6940272d0a7cb4a981dc9138.bindTooltip(
+                `<div>
+                     V1-4: Ngong_Road_1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e42a2f1c6940272d0a7cb4a981dc9138.setIcon(div_icon_c654eac3245e5454c13deda14ce876f9);
+            
+    
+            var marker_dce81c182a0663e77049db1a7ce105e3 = L.marker(
+                [-1.308312, 36.772297],
+                {
+}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            var div_icon_630b364d811922fefb3b81f9bbe480ba = L.divIcon({
+  "html": "\u003cdiv style=\"background:#D35400;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:1px solid white;\"\u003e5\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_33286617be3c368421fe221c77fee9b8 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_cf44def78a599ec5bd11ad94a423a0f8 = $(`<div id="html_cf44def78a599ec5bd11ad94a423a0f8" style="width: 100.0%; height: 100.0%;"><b>Ngong_Road_3</b> (Optimizer: vehicle 1, stop 5)<br>Arrive 11:11 | wait 12 min<br>Window 11:23 to 12:32<br><b>On time</b><br>Standard window</div>`)[0];
+                popup_33286617be3c368421fe221c77fee9b8.setContent(html_cf44def78a599ec5bd11ad94a423a0f8);
+            
+        
+
+        marker_dce81c182a0663e77049db1a7ce105e3.bindPopup(popup_33286617be3c368421fe221c77fee9b8)
+        ;
+
+        
+    
+    
+            marker_dce81c182a0663e77049db1a7ce105e3.bindTooltip(
+                `<div>
+                     V1-5: Ngong_Road_3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dce81c182a0663e77049db1a7ce105e3.setIcon(div_icon_630b364d811922fefb3b81f9bbe480ba);
+            
+    
+            var poly_line_39d351de1b4a7bcaf1a4e8ef2b3f8ac0 = L.polyline(
+                [[-1.305, 36.85], [-1.279676, 36.826314]],
+                {"bubblingMouseEvents": true, "color": "#1E8449", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#1E8449", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            poly_line_39d351de1b4a7bcaf1a4e8ef2b3f8ac0.bindTooltip(
+                `<div>
+                     Optimizer | V2: Industrial Area Depot to CBD_3 | 17 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_b24d7fc0f8d6c43b529c7ce933fb4814 = L.polyline(
+                [[-1.279676, 36.826314], [-1.276875, 36.80485]],
+                {"bubblingMouseEvents": true, "color": "#1E8449", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#1E8449", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            poly_line_b24d7fc0f8d6c43b529c7ce933fb4814.bindTooltip(
+                `<div>
+                     Optimizer | V2: CBD_3 to Westlands_2 | 11 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_9e27ee1ab215ef5fb88f073d7827f297 = L.polyline(
+                [[-1.276875, 36.80485], [-1.284077, 36.798598]],
+                {"bubblingMouseEvents": true, "color": "#1E8449", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#1E8449", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            poly_line_9e27ee1ab215ef5fb88f073d7827f297.bindTooltip(
+                `<div>
+                     Optimizer | V2: Westlands_2 to Kilimani_UpperHill_2 | 5 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_2f92c6fa91ef49704ee1293e440a06d0 = L.polyline(
+                [[-1.284077, 36.798598], [-1.198769, 36.789961]],
+                {"bubblingMouseEvents": true, "color": "#1E8449", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#1E8449", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            poly_line_2f92c6fa91ef49704ee1293e440a06d0.bindTooltip(
+                `<div>
+                     Optimizer | V2: Kilimani_UpperHill_2 to Ruaka_Kiambu_Road_3 | 30 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_493affee03157cbec9a02912853786fe = L.polyline(
+                [[-1.198769, 36.789961], [-1.204499, 36.792589]],
+                {"bubblingMouseEvents": true, "color": "#1E8449", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#1E8449", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            poly_line_493affee03157cbec9a02912853786fe.bindTooltip(
+                `<div>
+                     Optimizer | V2: Ruaka_Kiambu_Road_3 to Ruaka_Kiambu_Road_1 | 3 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_38c8ee3a2ac7d540e072f6f1aecb9a68 = L.polyline(
+                [[-1.204499, 36.792589], [-1.275829, 36.822153]],
+                {"bubblingMouseEvents": true, "color": "#1E8449", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#1E8449", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            poly_line_38c8ee3a2ac7d540e072f6f1aecb9a68.bindTooltip(
+                `<div>
+                     Optimizer | V2: Ruaka_Kiambu_Road_1 to CBD_1 | 37 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_547b36b7425d1c8d4e9a957b5ac4f4db = L.polyline(
+                [[-1.275829, 36.822153], [-1.305, 36.85]],
+                {"bubblingMouseEvents": true, "color": "#1E8449", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#1E8449", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            poly_line_547b36b7425d1c8d4e9a957b5ac4f4db.bindTooltip(
+                `<div>
+                     Optimizer | V2: CBD_1 to Industrial Area Depot | 20 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_81f56f4978224b7b6cc319ccab070e97 = L.marker(
+                [-1.279676, 36.826314],
+                {
+}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            var div_icon_222d56c4dee572ccb27404bf0d98c135 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#1E8449;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:1px solid white;\"\u003e1\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_a4699d6722f47a4d9fde1f81bf55e4c3 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_caedca45ae3feed4a535589e1cdfeae2 = $(`<div id="html_caedca45ae3feed4a535589e1cdfeae2" style="width: 100.0%; height: 100.0%;"><b>CBD_3</b> (Optimizer: vehicle 2, stop 1)<br>Arrive 12:18 | wait 0 min<br>Window 12:16 to 14:12<br><b>On time</b><br>Standard window</div>`)[0];
+                popup_a4699d6722f47a4d9fde1f81bf55e4c3.setContent(html_caedca45ae3feed4a535589e1cdfeae2);
+            
+        
+
+        marker_81f56f4978224b7b6cc319ccab070e97.bindPopup(popup_a4699d6722f47a4d9fde1f81bf55e4c3)
+        ;
+
+        
+    
+    
+            marker_81f56f4978224b7b6cc319ccab070e97.bindTooltip(
+                `<div>
+                     V2-1: CBD_3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_81f56f4978224b7b6cc319ccab070e97.setIcon(div_icon_222d56c4dee572ccb27404bf0d98c135);
+            
+    
+            var marker_6dfea88bc658ac050a260640f948d3d9 = L.marker(
+                [-1.276875, 36.80485],
+                {
+}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            var div_icon_c98b167a0eda0090e3818836b99c40fe = L.divIcon({
+  "html": "\u003cdiv style=\"background:#1E8449;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:1px solid white;\"\u003e2\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_75419c59af3ab8497d0f6b1238330e04 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_389aca31265a285ec008fefef5c169b4 = $(`<div id="html_389aca31265a285ec008fefef5c169b4" style="width: 100.0%; height: 100.0%;"><b>Westlands_2</b> (Optimizer: vehicle 2, stop 2)<br>Arrive 12:42 | wait 0 min<br>Window 11:55 to 13:36<br><b>On time</b><br>Standard window</div>`)[0];
+                popup_75419c59af3ab8497d0f6b1238330e04.setContent(html_389aca31265a285ec008fefef5c169b4);
+            
+        
+
+        marker_6dfea88bc658ac050a260640f948d3d9.bindPopup(popup_75419c59af3ab8497d0f6b1238330e04)
+        ;
+
+        
+    
+    
+            marker_6dfea88bc658ac050a260640f948d3d9.bindTooltip(
+                `<div>
+                     V2-2: Westlands_2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6dfea88bc658ac050a260640f948d3d9.setIcon(div_icon_c98b167a0eda0090e3818836b99c40fe);
+            
+    
+            var marker_8d7c5ed0cff3f266b4115af7b65515ce = L.marker(
+                [-1.284077, 36.798598],
+                {
+}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            var div_icon_9756a75b27759a6d4167e8bccba7ec06 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#1E8449;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:1px solid white;\"\u003e3\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_5910702e7396e95d91a46c40d6b5a540 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_484af27abdedbdf6ae69b8e0affd772d = $(`<div id="html_484af27abdedbdf6ae69b8e0affd772d" style="width: 100.0%; height: 100.0%;"><b>Kilimani_UpperHill_2</b> (Optimizer: vehicle 2, stop 3)<br>Arrive 13:00 | wait 0 min<br>Window 11:48 to 13:22<br><b>On time</b><br>Standard window</div>`)[0];
+                popup_5910702e7396e95d91a46c40d6b5a540.setContent(html_484af27abdedbdf6ae69b8e0affd772d);
+            
+        
+
+        marker_8d7c5ed0cff3f266b4115af7b65515ce.bindPopup(popup_5910702e7396e95d91a46c40d6b5a540)
+        ;
+
+        
+    
+    
+            marker_8d7c5ed0cff3f266b4115af7b65515ce.bindTooltip(
+                `<div>
+                     V2-3: Kilimani_UpperHill_2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8d7c5ed0cff3f266b4115af7b65515ce.setIcon(div_icon_9756a75b27759a6d4167e8bccba7ec06);
+            
+    
+            var marker_17f8647b848bce35bcd5edac406fb4c6 = L.marker(
+                [-1.198769, 36.789961],
+                {
+}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            var div_icon_ec4a86e6a86dbf71eef7e1d75ccbfb6a = L.divIcon({
+  "html": "\u003cdiv style=\"background:#1E8449;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:1px solid white;\"\u003e4\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_eb94aa342182cc2a5e114b2b5acbc1ed = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_9c36ae54cf250ae4898462565fd71305 = $(`<div id="html_9c36ae54cf250ae4898462565fd71305" style="width: 100.0%; height: 100.0%;"><b>Ruaka_Kiambu_Road_3</b> (Optimizer: vehicle 2, stop 4)<br>Arrive 13:43 | wait 0 min<br>Window 11:47 to 13:43<br><b>On time</b><br>Standard window</div>`)[0];
+                popup_eb94aa342182cc2a5e114b2b5acbc1ed.setContent(html_9c36ae54cf250ae4898462565fd71305);
+            
+        
+
+        marker_17f8647b848bce35bcd5edac406fb4c6.bindPopup(popup_eb94aa342182cc2a5e114b2b5acbc1ed)
+        ;
+
+        
+    
+    
+            marker_17f8647b848bce35bcd5edac406fb4c6.bindTooltip(
+                `<div>
+                     V2-4: Ruaka_Kiambu_Road_3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_17f8647b848bce35bcd5edac406fb4c6.setIcon(div_icon_ec4a86e6a86dbf71eef7e1d75ccbfb6a);
+            
+    
+            var marker_eff44f0cc48a2a403166f04f433d68dc = L.marker(
+                [-1.204499, 36.792589],
+                {
+}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            var div_icon_962606093a7b99afa59beee3ae1272bd = L.divIcon({
+  "html": "\u003cdiv style=\"background:#1E8449;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:1px solid white;\"\u003e5\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_0f84bdb4311d840f95dd41fcdad048c3 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_1e982209362b2281b1ab8e9ddc7fc43c = $(`<div id="html_1e982209362b2281b1ab8e9ddc7fc43c" style="width: 100.0%; height: 100.0%;"><b>Ruaka_Kiambu_Road_1</b> (Optimizer: vehicle 2, stop 5)<br>Arrive 13:59 | wait 18 min<br>Window 14:17 to 15:52<br><b>On time</b><br>Standard window</div>`)[0];
+                popup_0f84bdb4311d840f95dd41fcdad048c3.setContent(html_1e982209362b2281b1ab8e9ddc7fc43c);
+            
+        
+
+        marker_eff44f0cc48a2a403166f04f433d68dc.bindPopup(popup_0f84bdb4311d840f95dd41fcdad048c3)
+        ;
+
+        
+    
+    
+            marker_eff44f0cc48a2a403166f04f433d68dc.bindTooltip(
+                `<div>
+                     V2-5: Ruaka_Kiambu_Road_1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_eff44f0cc48a2a403166f04f433d68dc.setIcon(div_icon_962606093a7b99afa59beee3ae1272bd);
+            
+    
+            var marker_6505edba51a100d22fab9c5efa35e7e8 = L.marker(
+                [-1.275829, 36.822153],
+                {
+}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            var div_icon_70f6b0e1796df183e8bc1c5884d07012 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#1E8449;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:3px solid black;\"\u003e6\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_1e175dead084d2fb4fbedb98c8d2299a = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_772a9573feb337d4c94445c9012e10b0 = $(`<div id="html_772a9573feb337d4c94445c9012e10b0" style="width: 100.0%; height: 100.0%;"><b>CBD_1</b> (Optimizer: vehicle 2, stop 6)<br>Arrive 15:07 | wait 12 min<br>Window 15:19 to 16:16<br><b>On time</b><br>KEY ACCOUNT</div>`)[0];
+                popup_1e175dead084d2fb4fbedb98c8d2299a.setContent(html_772a9573feb337d4c94445c9012e10b0);
+            
+        
+
+        marker_6505edba51a100d22fab9c5efa35e7e8.bindPopup(popup_1e175dead084d2fb4fbedb98c8d2299a)
+        ;
+
+        
+    
+    
+            marker_6505edba51a100d22fab9c5efa35e7e8.bindTooltip(
+                `<div>
+                     V2-6: CBD_1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6505edba51a100d22fab9c5efa35e7e8.setIcon(div_icon_70f6b0e1796df183e8bc1c5884d07012);
+            
+    
+            var poly_line_b90f5bb83e30d8ec7cbe476675d71fa4 = L.polyline(
+                [[-1.305, 36.85], [-1.346284, 36.705977]],
+                {"bubblingMouseEvents": true, "color": "#7B241C", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7B241C", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            poly_line_b90f5bb83e30d8ec7cbe476675d71fa4.bindTooltip(
+                `<div>
+                     Optimizer | V3: Industrial Area Depot to Karen_Langata_2 | 52 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_406370e0c992039aaa0f40a848cea71f = L.polyline(
+                [[-1.346284, 36.705977], [-1.325639, 36.716443]],
+                {"bubblingMouseEvents": true, "color": "#7B241C", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7B241C", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            poly_line_406370e0c992039aaa0f40a848cea71f.bindTooltip(
+                `<div>
+                     Optimizer | V3: Karen_Langata_2 to Karen_Langata_3 | 9 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_755a97059df4cda3332c4deba097d22b = L.polyline(
+                [[-1.325639, 36.716443], [-1.287742, 36.78819]],
+                {"bubblingMouseEvents": true, "color": "#7B241C", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7B241C", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            poly_line_755a97059df4cda3332c4deba097d22b.bindTooltip(
+                `<div>
+                     Optimizer | V3: Karen_Langata_3 to Kilimani_UpperHill_1 | 29 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_0d2c142c8d5d5982d5c44e245cd8497d = L.polyline(
+                [[-1.287742, 36.78819], [-1.305, 36.85]],
+                {"bubblingMouseEvents": true, "color": "#7B241C", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#7B241C", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            poly_line_0d2c142c8d5d5982d5c44e245cd8497d.bindTooltip(
+                `<div>
+                     Optimizer | V3: Kilimani_UpperHill_1 to Industrial Area Depot | 23 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1b70d99e64df0f4c9441b0649bd3fa5b = L.marker(
+                [-1.346284, 36.705977],
+                {
+}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            var div_icon_7547400467736a6155bac7daf65534c7 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#7B241C;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:1px solid white;\"\u003e1\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_0bbd72de5e786263475b2277389efa31 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_6e7da5cf1c47294a4fbf37a34eea162f = $(`<div id="html_6e7da5cf1c47294a4fbf37a34eea162f" style="width: 100.0%; height: 100.0%;"><b>Karen_Langata_2</b> (Optimizer: vehicle 3, stop 1)<br>Arrive 11:27 | wait 0 min<br>Window 10:21 to 11:27<br><b>On time</b><br>Standard window</div>`)[0];
+                popup_0bbd72de5e786263475b2277389efa31.setContent(html_6e7da5cf1c47294a4fbf37a34eea162f);
+            
+        
+
+        marker_1b70d99e64df0f4c9441b0649bd3fa5b.bindPopup(popup_0bbd72de5e786263475b2277389efa31)
+        ;
+
+        
+    
+    
+            marker_1b70d99e64df0f4c9441b0649bd3fa5b.bindTooltip(
+                `<div>
+                     V3-1: Karen_Langata_2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1b70d99e64df0f4c9441b0649bd3fa5b.setIcon(div_icon_7547400467736a6155bac7daf65534c7);
+            
+    
+            var marker_3734b07f4bca015f0cba5dbf44c5d15b = L.marker(
+                [-1.325639, 36.716443],
+                {
+}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            var div_icon_f48811cb86d9ca7338bd23e2cc0cb104 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#7B241C;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:1px solid white;\"\u003e2\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_df44150e26034ed2529442c02c07c5a8 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_17bd5142ada5ec291ad27294c8fcf0b8 = $(`<div id="html_17bd5142ada5ec291ad27294c8fcf0b8" style="width: 100.0%; height: 100.0%;"><b>Karen_Langata_3</b> (Optimizer: vehicle 3, stop 2)<br>Arrive 11:56 | wait 86 min<br>Window 13:22 to 14:43<br><b>On time</b><br>Standard window</div>`)[0];
+                popup_df44150e26034ed2529442c02c07c5a8.setContent(html_17bd5142ada5ec291ad27294c8fcf0b8);
+            
+        
+
+        marker_3734b07f4bca015f0cba5dbf44c5d15b.bindPopup(popup_df44150e26034ed2529442c02c07c5a8)
+        ;
+
+        
+    
+    
+            marker_3734b07f4bca015f0cba5dbf44c5d15b.bindTooltip(
+                `<div>
+                     V3-2: Karen_Langata_3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3734b07f4bca015f0cba5dbf44c5d15b.setIcon(div_icon_f48811cb86d9ca7338bd23e2cc0cb104);
+            
+    
+            var marker_7ab591e0e34928c7f68318e1cf2a2e99 = L.marker(
+                [-1.287742, 36.78819],
+                {
+}
+            ).addTo(feature_group_f0d317675a66c0b3412ced08d68a1e85);
+        
+    
+            var div_icon_5408c199ae733f48ffd7754f6d35a868 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#7B241C;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:1px solid white;\"\u003e3\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_4c7d24589bf7a06acbcc18f117ad588e = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_692f036d78dae753a946ae096931395e = $(`<div id="html_692f036d78dae753a946ae096931395e" style="width: 100.0%; height: 100.0%;"><b>Kilimani_UpperHill_1</b> (Optimizer: vehicle 3, stop 3)<br>Arrive 14:07 | wait 0 min<br>Window 13:03 to 14:57<br><b>On time</b><br>Standard window</div>`)[0];
+                popup_4c7d24589bf7a06acbcc18f117ad588e.setContent(html_692f036d78dae753a946ae096931395e);
+            
+        
+
+        marker_7ab591e0e34928c7f68318e1cf2a2e99.bindPopup(popup_4c7d24589bf7a06acbcc18f117ad588e)
+        ;
+
+        
+    
+    
+            marker_7ab591e0e34928c7f68318e1cf2a2e99.bindTooltip(
+                `<div>
+                     V3-3: Kilimani_UpperHill_1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7ab591e0e34928c7f68318e1cf2a2e99.setIcon(div_icon_5408c199ae733f48ffd7754f6d35a868);
+            
+    
+            feature_group_f0d317675a66c0b3412ced08d68a1e85.addTo(map_2f1cdbb1fdfd0eacf0450527dd625eda);
+        
+    
+            var feature_group_cc1727914a7c36927416897da525f250 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var poly_line_9e022171d0e64cb7422771cfb31a7a46 = L.polyline(
+                [[-1.305, 36.85], [-1.218003, 36.80463]],
+                {"bubblingMouseEvents": true, "color": "#1F3A93", "dashArray": "6,6", "dashOffset": null, "fill": false, "fillColor": "#1F3A93", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            poly_line_9e022171d0e64cb7422771cfb31a7a46.bindTooltip(
+                `<div>
+                     H1 zone sweep (simulated) | V0: Industrial Area Depot to Ruaka_Kiambu_Road_2 | 35 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_9102732cd9d8296eba0edf98187f3ef8 = L.polyline(
+                [[-1.218003, 36.80463], [-1.2738, 36.821395]],
+                {"bubblingMouseEvents": true, "color": "#1F3A93", "dashArray": "6,6", "dashOffset": null, "fill": false, "fillColor": "#1F3A93", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            poly_line_9102732cd9d8296eba0edf98187f3ef8.bindTooltip(
+                `<div>
+                     H1 zone sweep (simulated) | V0: Ruaka_Kiambu_Road_2 to Westlands_3 | 29 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_ba19cfaf5f634ca33f4d9cd904c07831 = L.polyline(
+                [[-1.2738, 36.821395], [-1.198769, 36.789961]],
+                {"bubblingMouseEvents": true, "color": "#1F3A93", "dashArray": "6,6", "dashOffset": null, "fill": false, "fillColor": "#1F3A93", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            poly_line_ba19cfaf5f634ca33f4d9cd904c07831.bindTooltip(
+                `<div>
+                     H1 zone sweep (simulated) | V0: Westlands_3 to Ruaka_Kiambu_Road_3 | 40 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_d68248a34725e01c458b85533c48f07c = L.polyline(
+                [[-1.198769, 36.789961], [-1.279676, 36.826314]],
+                {"bubblingMouseEvents": true, "color": "#1F3A93", "dashArray": "6,6", "dashOffset": null, "fill": false, "fillColor": "#1F3A93", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            poly_line_d68248a34725e01c458b85533c48f07c.bindTooltip(
+                `<div>
+                     H1 zone sweep (simulated) | V0: Ruaka_Kiambu_Road_3 to CBD_3 | 43 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_1321ad010891da6829ddd2893b20b591 = L.polyline(
+                [[-1.279676, 36.826314], [-1.204499, 36.792589]],
+                {"bubblingMouseEvents": true, "color": "#1F3A93", "dashArray": "6,6", "dashOffset": null, "fill": false, "fillColor": "#1F3A93", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            poly_line_1321ad010891da6829ddd2893b20b591.bindTooltip(
+                `<div>
+                     H1 zone sweep (simulated) | V0: CBD_3 to Ruaka_Kiambu_Road_1 | 40 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_9c3aa963facf7e8b5aa2a3c63bf75e6d = L.polyline(
+                [[-1.204499, 36.792589], [-1.305, 36.85]],
+                {"bubblingMouseEvents": true, "color": "#1F3A93", "dashArray": "6,6", "dashOffset": null, "fill": false, "fillColor": "#1F3A93", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            poly_line_9c3aa963facf7e8b5aa2a3c63bf75e6d.bindTooltip(
+                `<div>
+                     H1 zone sweep (simulated) | V0: Ruaka_Kiambu_Road_1 to Industrial Area Depot | 41 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_7c83600b43e1281e5351644e0de38b4c = L.marker(
+                [-1.218003, 36.80463],
+                {
+}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            var div_icon_ba1c149b9ae6e689f998fb12c1124b9c = L.divIcon({
+  "html": "\u003cdiv style=\"background:#1F3A93;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:1px solid white;\"\u003e1\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_9128d89e56b3909e3919f385dbd854e5 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_afea84e1dbabe64d0c700a53b6729fc9 = $(`<div id="html_afea84e1dbabe64d0c700a53b6729fc9" style="width: 100.0%; height: 100.0%;"><b>Ruaka_Kiambu_Road_2</b> (H1 zone sweep (simulated): vehicle 0, stop 1)<br>Arrive 10:03 | wait 0 min<br>Window 09:01 to 10:45<br><b>On time</b><br>Standard window</div>`)[0];
+                popup_9128d89e56b3909e3919f385dbd854e5.setContent(html_afea84e1dbabe64d0c700a53b6729fc9);
+            
+        
+
+        marker_7c83600b43e1281e5351644e0de38b4c.bindPopup(popup_9128d89e56b3909e3919f385dbd854e5)
+        ;
+
+        
+    
+    
+            marker_7c83600b43e1281e5351644e0de38b4c.bindTooltip(
+                `<div>
+                     V0-1: Ruaka_Kiambu_Road_2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7c83600b43e1281e5351644e0de38b4c.setIcon(div_icon_ba1c149b9ae6e689f998fb12c1124b9c);
+            
+    
+            var marker_f9ba356c69425e0bed72bf5a2718ffaf = L.marker(
+                [-1.2738, 36.821395],
+                {
+}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            var div_icon_0f7aa67957f7e213e826eac2d9a35e82 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#1F3A93;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:3px solid black;\"\u003e2\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_56648d6a3209d3ca28edb1b9aa2a7a7e = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_cb3d4e405c1ab7ef0624ff83db127a5f = $(`<div id="html_cb3d4e405c1ab7ef0624ff83db127a5f" style="width: 100.0%; height: 100.0%;"><b>Westlands_3</b> (H1 zone sweep (simulated): vehicle 0, stop 2)<br>Arrive 10:50 | wait 0 min<br>Window 09:58 to 10:50<br><b>On time</b><br>KEY ACCOUNT</div>`)[0];
+                popup_56648d6a3209d3ca28edb1b9aa2a7a7e.setContent(html_cb3d4e405c1ab7ef0624ff83db127a5f);
+            
+        
+
+        marker_f9ba356c69425e0bed72bf5a2718ffaf.bindPopup(popup_56648d6a3209d3ca28edb1b9aa2a7a7e)
+        ;
+
+        
+    
+    
+            marker_f9ba356c69425e0bed72bf5a2718ffaf.bindTooltip(
+                `<div>
+                     V0-2: Westlands_3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f9ba356c69425e0bed72bf5a2718ffaf.setIcon(div_icon_0f7aa67957f7e213e826eac2d9a35e82);
+            
+    
+            var marker_13a35b053d0b966a2b87eca4ba3daef6 = L.marker(
+                [-1.198769, 36.789961],
+                {
+}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            var div_icon_12bf69e79a2838368a9a8a45f581ab3c = L.divIcon({
+  "html": "\u003cdiv style=\"background:#1F3A93;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:1px solid white;\"\u003e3\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_7e15b04ee42b4497a92f40f54f4fd978 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_3fcd8ee1407950ea6a70ee8a1a9070b7 = $(`<div id="html_3fcd8ee1407950ea6a70ee8a1a9070b7" style="width: 100.0%; height: 100.0%;"><b>Ruaka_Kiambu_Road_3</b> (H1 zone sweep (simulated): vehicle 0, stop 3)<br>Arrive 11:42 | wait 5 min<br>Window 11:47 to 13:43<br><b>On time</b><br>Standard window</div>`)[0];
+                popup_7e15b04ee42b4497a92f40f54f4fd978.setContent(html_3fcd8ee1407950ea6a70ee8a1a9070b7);
+            
+        
+
+        marker_13a35b053d0b966a2b87eca4ba3daef6.bindPopup(popup_7e15b04ee42b4497a92f40f54f4fd978)
+        ;
+
+        
+    
+    
+            marker_13a35b053d0b966a2b87eca4ba3daef6.bindTooltip(
+                `<div>
+                     V0-3: Ruaka_Kiambu_Road_3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_13a35b053d0b966a2b87eca4ba3daef6.setIcon(div_icon_12bf69e79a2838368a9a8a45f581ab3c);
+            
+    
+            var marker_a85a3b7bf858315091f3240aa2b40804 = L.marker(
+                [-1.279676, 36.826314],
+                {
+}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            var div_icon_43d057acff7c6e6123fbdafde4b9ac43 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#1F3A93;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:1px solid white;\"\u003e4\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_12f0d1e583dee174020bdf0e1406aead = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_68ce2bc2f781079f588a592b09d3cdd2 = $(`<div id="html_68ce2bc2f781079f588a592b09d3cdd2" style="width: 100.0%; height: 100.0%;"><b>CBD_3</b> (H1 zone sweep (simulated): vehicle 0, stop 4)<br>Arrive 12:43 | wait 0 min<br>Window 12:16 to 14:12<br><b>On time</b><br>Standard window</div>`)[0];
+                popup_12f0d1e583dee174020bdf0e1406aead.setContent(html_68ce2bc2f781079f588a592b09d3cdd2);
+            
+        
+
+        marker_a85a3b7bf858315091f3240aa2b40804.bindPopup(popup_12f0d1e583dee174020bdf0e1406aead)
+        ;
+
+        
+    
+    
+            marker_a85a3b7bf858315091f3240aa2b40804.bindTooltip(
+                `<div>
+                     V0-4: CBD_3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a85a3b7bf858315091f3240aa2b40804.setIcon(div_icon_43d057acff7c6e6123fbdafde4b9ac43);
+            
+    
+            var marker_c77417c58beab68045ff9eeb5a71341c = L.marker(
+                [-1.204499, 36.792589],
+                {
+}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            var div_icon_6dbcb8cfdd5ae51faddb08d1114f3546 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#1F3A93;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:1px solid white;\"\u003e5\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_f9ef672f3dd6738d06c1fcf69966df10 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_5c4e517dca56c404189ca0c7aea1b98e = $(`<div id="html_5c4e517dca56c404189ca0c7aea1b98e" style="width: 100.0%; height: 100.0%;"><b>Ruaka_Kiambu_Road_1</b> (H1 zone sweep (simulated): vehicle 0, stop 5)<br>Arrive 13:36 | wait 41 min<br>Window 14:17 to 15:52<br><b>On time</b><br>Standard window</div>`)[0];
+                popup_f9ef672f3dd6738d06c1fcf69966df10.setContent(html_5c4e517dca56c404189ca0c7aea1b98e);
+            
+        
+
+        marker_c77417c58beab68045ff9eeb5a71341c.bindPopup(popup_f9ef672f3dd6738d06c1fcf69966df10)
+        ;
+
+        
+    
+    
+            marker_c77417c58beab68045ff9eeb5a71341c.bindTooltip(
+                `<div>
+                     V0-5: Ruaka_Kiambu_Road_1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c77417c58beab68045ff9eeb5a71341c.setIcon(div_icon_6dbcb8cfdd5ae51faddb08d1114f3546);
+            
+    
+            var poly_line_46350725c99e6753f2e78370a636159b = L.polyline(
+                [[-1.305, 36.85], [-1.260235, 36.806577]],
+                {"bubblingMouseEvents": true, "color": "#D35400", "dashArray": "6,6", "dashOffset": null, "fill": false, "fillColor": "#D35400", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            poly_line_46350725c99e6753f2e78370a636159b.bindTooltip(
+                `<div>
+                     H1 zone sweep (simulated) | V1: Industrial Area Depot to Westlands_1 | 31 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_ad57148d8728e17bd34c7c2bd6a6413a = L.polyline(
+                [[-1.260235, 36.806577], [-1.27714, 36.821897]],
+                {"bubblingMouseEvents": true, "color": "#D35400", "dashArray": "6,6", "dashOffset": null, "fill": false, "fillColor": "#D35400", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            poly_line_ad57148d8728e17bd34c7c2bd6a6413a.bindTooltip(
+                `<div>
+                     H1 zone sweep (simulated) | V1: Westlands_1 to CBD_2 | 12 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_c44760f55c6a6339aa3fe2d2b16ebfe2 = L.polyline(
+                [[-1.27714, 36.821897], [-1.284077, 36.798598]],
+                {"bubblingMouseEvents": true, "color": "#D35400", "dashArray": "6,6", "dashOffset": null, "fill": false, "fillColor": "#D35400", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            poly_line_c44760f55c6a6339aa3fe2d2b16ebfe2.bindTooltip(
+                `<div>
+                     H1 zone sweep (simulated) | V1: CBD_2 to Kilimani_UpperHill_2 | 12 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_b701fe774470aa883d332d9ab5b69371 = L.polyline(
+                [[-1.284077, 36.798598], [-1.276875, 36.80485]],
+                {"bubblingMouseEvents": true, "color": "#D35400", "dashArray": "6,6", "dashOffset": null, "fill": false, "fillColor": "#D35400", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            poly_line_b701fe774470aa883d332d9ab5b69371.bindTooltip(
+                `<div>
+                     H1 zone sweep (simulated) | V1: Kilimani_UpperHill_2 to Westlands_2 | 5 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_a875f4adbb0a734ff3d38c34d35a05be = L.polyline(
+                [[-1.276875, 36.80485], [-1.275829, 36.822153]],
+                {"bubblingMouseEvents": true, "color": "#D35400", "dashArray": "6,6", "dashOffset": null, "fill": false, "fillColor": "#D35400", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            poly_line_a875f4adbb0a734ff3d38c34d35a05be.bindTooltip(
+                `<div>
+                     H1 zone sweep (simulated) | V1: Westlands_2 to CBD_1 | 9 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_40678592f668d63822d706c53853b9e1 = L.polyline(
+                [[-1.275829, 36.822153], [-1.305, 36.85]],
+                {"bubblingMouseEvents": true, "color": "#D35400", "dashArray": "6,6", "dashOffset": null, "fill": false, "fillColor": "#D35400", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            poly_line_40678592f668d63822d706c53853b9e1.bindTooltip(
+                `<div>
+                     H1 zone sweep (simulated) | V1: CBD_1 to Industrial Area Depot | 20 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c899167c0dfda208ea939f779510936b = L.marker(
+                [-1.260235, 36.806577],
+                {
+}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            var div_icon_8af3b4b64864f7def47001210108ba5f = L.divIcon({
+  "html": "\u003cdiv style=\"background:#D35400;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:1px solid white;\"\u003e1\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_3903343b67ea9a5434737a7f0e7c8a1a = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_35cfe994044b92606817936d16f47522 = $(`<div id="html_35cfe994044b92606817936d16f47522" style="width: 100.0%; height: 100.0%;"><b>Westlands_1</b> (H1 zone sweep (simulated): vehicle 1, stop 1)<br>Arrive 08:59 | wait 0 min<br>Window 07:41 to 08:59<br><b>On time</b><br>Standard window</div>`)[0];
+                popup_3903343b67ea9a5434737a7f0e7c8a1a.setContent(html_35cfe994044b92606817936d16f47522);
+            
+        
+
+        marker_c899167c0dfda208ea939f779510936b.bindPopup(popup_3903343b67ea9a5434737a7f0e7c8a1a)
+        ;
+
+        
+    
+    
+            marker_c899167c0dfda208ea939f779510936b.bindTooltip(
+                `<div>
+                     V1-1: Westlands_1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c899167c0dfda208ea939f779510936b.setIcon(div_icon_8af3b4b64864f7def47001210108ba5f);
+            
+    
+            var marker_ab73c333b39c5bdbd346e50698c5d2a1 = L.marker(
+                [-1.27714, 36.821897],
+                {
+}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            var div_icon_f4f7eeccc04fb2a804cef43a97218916 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#D35400;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:3px solid black;\"\u003e2\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_71d9ef7888c907a3c06f4c406af9f21a = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_93475efd224e42513b1e4db01f72dca6 = $(`<div id="html_93475efd224e42513b1e4db01f72dca6" style="width: 100.0%; height: 100.0%;"><b>CBD_2</b> (H1 zone sweep (simulated): vehicle 1, stop 2)<br>Arrive 09:26 | wait 86 min<br>Window 10:52 to 11:45<br><b>On time</b><br>KEY ACCOUNT</div>`)[0];
+                popup_71d9ef7888c907a3c06f4c406af9f21a.setContent(html_93475efd224e42513b1e4db01f72dca6);
+            
+        
+
+        marker_ab73c333b39c5bdbd346e50698c5d2a1.bindPopup(popup_71d9ef7888c907a3c06f4c406af9f21a)
+        ;
+
+        
+    
+    
+            marker_ab73c333b39c5bdbd346e50698c5d2a1.bindTooltip(
+                `<div>
+                     V1-2: CBD_2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ab73c333b39c5bdbd346e50698c5d2a1.setIcon(div_icon_f4f7eeccc04fb2a804cef43a97218916);
+            
+    
+            var marker_f84752f41018ee027d0ca151e81de2a7 = L.marker(
+                [-1.284077, 36.798598],
+                {
+}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            var div_icon_6be6f6944861143497e18f70092f46b2 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#D35400;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:1px solid white;\"\u003e3\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_5dcc2395786c6f162065cb00c3282811 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_0fe821a99c0d55c45dc2654a1b5e4e4c = $(`<div id="html_0fe821a99c0d55c45dc2654a1b5e4e4c" style="width: 100.0%; height: 100.0%;"><b>Kilimani_UpperHill_2</b> (H1 zone sweep (simulated): vehicle 1, stop 3)<br>Arrive 11:20 | wait 28 min<br>Window 11:48 to 13:22<br><b>On time</b><br>Standard window</div>`)[0];
+                popup_5dcc2395786c6f162065cb00c3282811.setContent(html_0fe821a99c0d55c45dc2654a1b5e4e4c);
+            
+        
+
+        marker_f84752f41018ee027d0ca151e81de2a7.bindPopup(popup_5dcc2395786c6f162065cb00c3282811)
+        ;
+
+        
+    
+    
+            marker_f84752f41018ee027d0ca151e81de2a7.bindTooltip(
+                `<div>
+                     V1-3: Kilimani_UpperHill_2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f84752f41018ee027d0ca151e81de2a7.setIcon(div_icon_6be6f6944861143497e18f70092f46b2);
+            
+    
+            var marker_055225668b390985d80dc49043406dba = L.marker(
+                [-1.276875, 36.80485],
+                {
+}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            var div_icon_13d8d6ee86a8c8c3b65136f34c9c0f03 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#D35400;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:1px solid white;\"\u003e4\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_9b4551e0184346c968cbe6eaa6539e8e = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_043e2c758de43350e016b705ad2ddec5 = $(`<div id="html_043e2c758de43350e016b705ad2ddec5" style="width: 100.0%; height: 100.0%;"><b>Westlands_2</b> (H1 zone sweep (simulated): vehicle 1, stop 4)<br>Arrive 12:06 | wait 0 min<br>Window 11:55 to 13:36<br><b>On time</b><br>Standard window</div>`)[0];
+                popup_9b4551e0184346c968cbe6eaa6539e8e.setContent(html_043e2c758de43350e016b705ad2ddec5);
+            
+        
+
+        marker_055225668b390985d80dc49043406dba.bindPopup(popup_9b4551e0184346c968cbe6eaa6539e8e)
+        ;
+
+        
+    
+    
+            marker_055225668b390985d80dc49043406dba.bindTooltip(
+                `<div>
+                     V1-4: Westlands_2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_055225668b390985d80dc49043406dba.setIcon(div_icon_13d8d6ee86a8c8c3b65136f34c9c0f03);
+            
+    
+            var marker_6a7c65683e563d529d80a5f23d5b66df = L.marker(
+                [-1.275829, 36.822153],
+                {
+}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            var div_icon_3d66f694260bd0dc3d7d810f479235f5 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#D35400;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:3px solid black;\"\u003e5\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_ac07bf441c36de580448a4fa77f9da2d = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_e401012dbe00daa3bf783cdabd852181 = $(`<div id="html_e401012dbe00daa3bf783cdabd852181" style="width: 100.0%; height: 100.0%;"><b>CBD_1</b> (H1 zone sweep (simulated): vehicle 1, stop 5)<br>Arrive 12:28 | wait 171 min<br>Window 15:19 to 16:16<br><b>On time</b><br>KEY ACCOUNT</div>`)[0];
+                popup_ac07bf441c36de580448a4fa77f9da2d.setContent(html_e401012dbe00daa3bf783cdabd852181);
+            
+        
+
+        marker_6a7c65683e563d529d80a5f23d5b66df.bindPopup(popup_ac07bf441c36de580448a4fa77f9da2d)
+        ;
+
+        
+    
+    
+            marker_6a7c65683e563d529d80a5f23d5b66df.bindTooltip(
+                `<div>
+                     V1-5: CBD_1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6a7c65683e563d529d80a5f23d5b66df.setIcon(div_icon_3d66f694260bd0dc3d7d810f479235f5);
+            
+    
+            var poly_line_fdf8b6413263dd89ab0262f359c4eed6 = L.polyline(
+                [[-1.305, 36.85], [-1.308241, 36.79137]],
+                {"bubblingMouseEvents": true, "color": "#1E8449", "dashArray": "6,6", "dashOffset": null, "fill": false, "fillColor": "#1E8449", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            poly_line_fdf8b6413263dd89ab0262f359c4eed6.bindTooltip(
+                `<div>
+                     H1 zone sweep (simulated) | V2: Industrial Area Depot to Kilimani_UpperHill_3 | 21 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_01aa13e7ddd41ade3833890ea21cec58 = L.polyline(
+                [[-1.308241, 36.79137], [-1.290641, 36.74829]],
+                {"bubblingMouseEvents": true, "color": "#1E8449", "dashArray": "6,6", "dashOffset": null, "fill": false, "fillColor": "#1E8449", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            poly_line_01aa13e7ddd41ade3833890ea21cec58.bindTooltip(
+                `<div>
+                     H1 zone sweep (simulated) | V2: Kilimani_UpperHill_3 to Ngong_Road_2 | 22 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_739efdb6422b233b310a8988df0d64a3 = L.polyline(
+                [[-1.290641, 36.74829], [-1.308312, 36.772297]],
+                {"bubblingMouseEvents": true, "color": "#1E8449", "dashArray": "6,6", "dashOffset": null, "fill": false, "fillColor": "#1E8449", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            poly_line_739efdb6422b233b310a8988df0d64a3.bindTooltip(
+                `<div>
+                     H1 zone sweep (simulated) | V2: Ngong_Road_2 to Ngong_Road_3 | 14 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_f6d4c2ade95a0ed984e65370d324d216 = L.polyline(
+                [[-1.308312, 36.772297], [-1.308377, 36.769625]],
+                {"bubblingMouseEvents": true, "color": "#1E8449", "dashArray": "6,6", "dashOffset": null, "fill": false, "fillColor": "#1E8449", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            poly_line_f6d4c2ade95a0ed984e65370d324d216.bindTooltip(
+                `<div>
+                     H1 zone sweep (simulated) | V2: Ngong_Road_3 to Ngong_Road_1 | 2 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_809bd24b35d877508bdc42061860288c = L.polyline(
+                [[-1.308377, 36.769625], [-1.287742, 36.78819]],
+                {"bubblingMouseEvents": true, "color": "#1E8449", "dashArray": "6,6", "dashOffset": null, "fill": false, "fillColor": "#1E8449", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            poly_line_809bd24b35d877508bdc42061860288c.bindTooltip(
+                `<div>
+                     H1 zone sweep (simulated) | V2: Ngong_Road_1 to Kilimani_UpperHill_1 | 13 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_8502b3609f8b5822f87799c548bcfb0d = L.polyline(
+                [[-1.287742, 36.78819], [-1.305, 36.85]],
+                {"bubblingMouseEvents": true, "color": "#1E8449", "dashArray": "6,6", "dashOffset": null, "fill": false, "fillColor": "#1E8449", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            poly_line_8502b3609f8b5822f87799c548bcfb0d.bindTooltip(
+                `<div>
+                     H1 zone sweep (simulated) | V2: Kilimani_UpperHill_1 to Industrial Area Depot | 23 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_aa5cc551b3a2560d42a971a8a4477f6b = L.marker(
+                [-1.308241, 36.79137],
+                {
+}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            var div_icon_a083a3306fa8df17925793d7a614b804 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#1E8449;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:1px solid white;\"\u003e1\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_98e8c14f9d296241b820d73f9b1b5f4b = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_732f0c40823356e95e5f6cc1081206a5 = $(`<div id="html_732f0c40823356e95e5f6cc1081206a5" style="width: 100.0%; height: 100.0%;"><b>Kilimani_UpperHill_3</b> (H1 zone sweep (simulated): vehicle 2, stop 1)<br>Arrive 09:14 | wait 0 min<br>Window 07:23 to 09:23<br><b>On time</b><br>Standard window</div>`)[0];
+                popup_98e8c14f9d296241b820d73f9b1b5f4b.setContent(html_732f0c40823356e95e5f6cc1081206a5);
+            
+        
+
+        marker_aa5cc551b3a2560d42a971a8a4477f6b.bindPopup(popup_98e8c14f9d296241b820d73f9b1b5f4b)
+        ;
+
+        
+    
+    
+            marker_aa5cc551b3a2560d42a971a8a4477f6b.bindTooltip(
+                `<div>
+                     V2-1: Kilimani_UpperHill_3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_aa5cc551b3a2560d42a971a8a4477f6b.setIcon(div_icon_a083a3306fa8df17925793d7a614b804);
+            
+    
+            var marker_fd062c21c3a8e1b9d1f7db56b1eadfec = L.marker(
+                [-1.290641, 36.74829],
+                {
+}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            var div_icon_416160eac14110304f079ebc6da593c4 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#1E8449;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:1px solid white;\"\u003e2\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_6bd3ddf52baad03dd9f113753cde9147 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_db99a02c7fbaef9d23ff1d33bc7a069b = $(`<div id="html_db99a02c7fbaef9d23ff1d33bc7a069b" style="width: 100.0%; height: 100.0%;"><b>Ngong_Road_2</b> (H1 zone sweep (simulated): vehicle 2, stop 2)<br>Arrive 09:53 | wait 0 min<br>Window 07:57 to 09:53<br><b>On time</b><br>Standard window</div>`)[0];
+                popup_6bd3ddf52baad03dd9f113753cde9147.setContent(html_db99a02c7fbaef9d23ff1d33bc7a069b);
+            
+        
+
+        marker_fd062c21c3a8e1b9d1f7db56b1eadfec.bindPopup(popup_6bd3ddf52baad03dd9f113753cde9147)
+        ;
+
+        
+    
+    
+            marker_fd062c21c3a8e1b9d1f7db56b1eadfec.bindTooltip(
+                `<div>
+                     V2-2: Ngong_Road_2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fd062c21c3a8e1b9d1f7db56b1eadfec.setIcon(div_icon_416160eac14110304f079ebc6da593c4);
+            
+    
+            var marker_3185537008de9cabc52caf574b9e886b = L.marker(
+                [-1.308312, 36.772297],
+                {
+}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            var div_icon_3c9877dc34c9046b004a3d5e83c905b1 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#1E8449;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:1px solid white;\"\u003e3\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_e51f6a718c4338b49181a93d095fab8e = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_96089f6a67f4e3bbafcefa1452bf0644 = $(`<div id="html_96089f6a67f4e3bbafcefa1452bf0644" style="width: 100.0%; height: 100.0%;"><b>Ngong_Road_3</b> (H1 zone sweep (simulated): vehicle 2, stop 3)<br>Arrive 10:23 | wait 60 min<br>Window 11:23 to 12:32<br><b>On time</b><br>Standard window</div>`)[0];
+                popup_e51f6a718c4338b49181a93d095fab8e.setContent(html_96089f6a67f4e3bbafcefa1452bf0644);
+            
+        
+
+        marker_3185537008de9cabc52caf574b9e886b.bindPopup(popup_e51f6a718c4338b49181a93d095fab8e)
+        ;
+
+        
+    
+    
+            marker_3185537008de9cabc52caf574b9e886b.bindTooltip(
+                `<div>
+                     V2-3: Ngong_Road_3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3185537008de9cabc52caf574b9e886b.setIcon(div_icon_3c9877dc34c9046b004a3d5e83c905b1);
+            
+    
+            var marker_301007b22a91f740c0d133dc3290b302 = L.marker(
+                [-1.308377, 36.769625],
+                {
+}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            var div_icon_ade5935912730b5c26a9c3afb9f424fa = L.divIcon({
+  "html": "\u003cdiv style=\"background:#1E8449;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:1px solid white;\"\u003e4\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_95977d2f6d88fb9f0d16e4bdece0b27d = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_4f17895cd8defc071d3acc79ecae2e26 = $(`<div id="html_4f17895cd8defc071d3acc79ecae2e26" style="width: 100.0%; height: 100.0%;"><b>Ngong_Road_1</b> (H1 zone sweep (simulated): vehicle 2, stop 4)<br>Arrive 11:36 | wait 0 min<br>Window 10:57 to 12:57<br><b>On time</b><br>Standard window</div>`)[0];
+                popup_95977d2f6d88fb9f0d16e4bdece0b27d.setContent(html_4f17895cd8defc071d3acc79ecae2e26);
+            
+        
+
+        marker_301007b22a91f740c0d133dc3290b302.bindPopup(popup_95977d2f6d88fb9f0d16e4bdece0b27d)
+        ;
+
+        
+    
+    
+            marker_301007b22a91f740c0d133dc3290b302.bindTooltip(
+                `<div>
+                     V2-4: Ngong_Road_1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_301007b22a91f740c0d133dc3290b302.setIcon(div_icon_ade5935912730b5c26a9c3afb9f424fa);
+            
+    
+            var marker_87f0747ca23eb60f01de9e6c981dbc6f = L.marker(
+                [-1.287742, 36.78819],
+                {
+}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            var div_icon_9d3bc3cb898c894a5c174878564e87f8 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#1E8449;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:1px solid white;\"\u003e5\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_26bfd57185a07a30be6c7d5e202673c5 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_73c7251ffd801f79dc6cf74a937894ef = $(`<div id="html_73c7251ffd801f79dc6cf74a937894ef" style="width: 100.0%; height: 100.0%;"><b>Kilimani_UpperHill_1</b> (H1 zone sweep (simulated): vehicle 2, stop 5)<br>Arrive 12:01 | wait 62 min<br>Window 13:03 to 14:57<br><b>On time</b><br>Standard window</div>`)[0];
+                popup_26bfd57185a07a30be6c7d5e202673c5.setContent(html_73c7251ffd801f79dc6cf74a937894ef);
+            
+        
+
+        marker_87f0747ca23eb60f01de9e6c981dbc6f.bindPopup(popup_26bfd57185a07a30be6c7d5e202673c5)
+        ;
+
+        
+    
+    
+            marker_87f0747ca23eb60f01de9e6c981dbc6f.bindTooltip(
+                `<div>
+                     V2-5: Kilimani_UpperHill_1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_87f0747ca23eb60f01de9e6c981dbc6f.setIcon(div_icon_9d3bc3cb898c894a5c174878564e87f8);
+            
+    
+            var poly_line_3dcd2dd0c8d2d4383060c23602eda370 = L.polyline(
+                [[-1.305, 36.85], [-1.333802, 36.740221]],
+                {"bubblingMouseEvents": true, "color": "#7B241C", "dashArray": "6,6", "dashOffset": null, "fill": false, "fillColor": "#7B241C", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            poly_line_3dcd2dd0c8d2d4383060c23602eda370.bindTooltip(
+                `<div>
+                     H1 zone sweep (simulated) | V3: Industrial Area Depot to Karen_Langata_1 | 40 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_24b1253d1a0ed9801ec46fa0a0570299 = L.polyline(
+                [[-1.333802, 36.740221], [-1.346284, 36.705977]],
+                {"bubblingMouseEvents": true, "color": "#7B241C", "dashArray": "6,6", "dashOffset": null, "fill": false, "fillColor": "#7B241C", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            poly_line_24b1253d1a0ed9801ec46fa0a0570299.bindTooltip(
+                `<div>
+                     H1 zone sweep (simulated) | V3: Karen_Langata_1 to Karen_Langata_2 | 13 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_f9770525a16d4fe5402bc635d6907603 = L.polyline(
+                [[-1.346284, 36.705977], [-1.325639, 36.716443]],
+                {"bubblingMouseEvents": true, "color": "#7B241C", "dashArray": "6,6", "dashOffset": null, "fill": false, "fillColor": "#7B241C", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            poly_line_f9770525a16d4fe5402bc635d6907603.bindTooltip(
+                `<div>
+                     H1 zone sweep (simulated) | V3: Karen_Langata_2 to Karen_Langata_3 | 9 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_e4a3f9c2b5b4ee9283a431638b29b669 = L.polyline(
+                [[-1.325639, 36.716443], [-1.305, 36.85]],
+                {"bubblingMouseEvents": true, "color": "#7B241C", "dashArray": "6,6", "dashOffset": null, "fill": false, "fillColor": "#7B241C", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.75, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            poly_line_e4a3f9c2b5b4ee9283a431638b29b669.bindTooltip(
+                `<div>
+                     H1 zone sweep (simulated) | V3: Karen_Langata_3 to Industrial Area Depot | 47 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4d2fc7289f4f7b16e7dea13d2b7af4f7 = L.marker(
+                [-1.333802, 36.740221],
+                {
+}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            var div_icon_9066270c3c42951d81089aa68e9172e8 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#7B241C;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:3px solid black;\"\u003e1\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_01f591d229b8ab7f1103d5efca3c9ffd = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_a98d722135bc6cadb20b0bf2c407dd6b = $(`<div id="html_a98d722135bc6cadb20b0bf2c407dd6b" style="width: 100.0%; height: 100.0%;"><b>Karen_Langata_1</b> (H1 zone sweep (simulated): vehicle 3, stop 1)<br>Arrive 09:19 | wait 0 min<br>Window 08:31 to 09:19<br><b>On time</b><br>KEY ACCOUNT</div>`)[0];
+                popup_01f591d229b8ab7f1103d5efca3c9ffd.setContent(html_a98d722135bc6cadb20b0bf2c407dd6b);
+            
+        
+
+        marker_4d2fc7289f4f7b16e7dea13d2b7af4f7.bindPopup(popup_01f591d229b8ab7f1103d5efca3c9ffd)
+        ;
+
+        
+    
+    
+            marker_4d2fc7289f4f7b16e7dea13d2b7af4f7.bindTooltip(
+                `<div>
+                     V3-1: Karen_Langata_1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4d2fc7289f4f7b16e7dea13d2b7af4f7.setIcon(div_icon_9066270c3c42951d81089aa68e9172e8);
+            
+    
+            var marker_8888dae8fe3173f33aac27384250f726 = L.marker(
+                [-1.346284, 36.705977],
+                {
+}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            var div_icon_e0d9d066429068efbb4d84bf85eff2fa = L.divIcon({
+  "html": "\u003cdiv style=\"background:#7B241C;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:1px solid white;\"\u003e2\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_4c7e8f087fdbeae798a07a68f023f38d = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_be6c4492414a17814acff630f3e27a1b = $(`<div id="html_be6c4492414a17814acff630f3e27a1b" style="width: 100.0%; height: 100.0%;"><b>Karen_Langata_2</b> (H1 zone sweep (simulated): vehicle 3, stop 2)<br>Arrive 09:43 | wait 38 min<br>Window 10:21 to 11:27<br><b>On time</b><br>Standard window</div>`)[0];
+                popup_4c7e8f087fdbeae798a07a68f023f38d.setContent(html_be6c4492414a17814acff630f3e27a1b);
+            
+        
+
+        marker_8888dae8fe3173f33aac27384250f726.bindPopup(popup_4c7e8f087fdbeae798a07a68f023f38d)
+        ;
+
+        
+    
+    
+            marker_8888dae8fe3173f33aac27384250f726.bindTooltip(
+                `<div>
+                     V3-2: Karen_Langata_2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8888dae8fe3173f33aac27384250f726.setIcon(div_icon_e0d9d066429068efbb4d84bf85eff2fa);
+            
+    
+            var marker_5887b1e15cbf1df65cacd5d4d9d614ad = L.marker(
+                [-1.325639, 36.716443],
+                {
+}
+            ).addTo(feature_group_cc1727914a7c36927416897da525f250);
+        
+    
+            var div_icon_46a86a3e7060cee20e2c22a7783e22fb = L.divIcon({
+  "html": "\u003cdiv style=\"background:#7B241C;color:white;border-radius:50%;width:22px;height:22px;line-height:20px;text-align:center;font-size:11px;font-weight:bold;border:1px solid white;\"\u003e3\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+        var popup_0f9a022a1bf3145eea358ed5e43e547d = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_1856632d21ae8b2c744c65dbdd7a410f = $(`<div id="html_1856632d21ae8b2c744c65dbdd7a410f" style="width: 100.0%; height: 100.0%;"><b>Karen_Langata_3</b> (H1 zone sweep (simulated): vehicle 3, stop 3)<br>Arrive 10:50 | wait 152 min<br>Window 13:22 to 14:43<br><b>On time</b><br>Standard window</div>`)[0];
+                popup_0f9a022a1bf3145eea358ed5e43e547d.setContent(html_1856632d21ae8b2c744c65dbdd7a410f);
+            
+        
+
+        marker_5887b1e15cbf1df65cacd5d4d9d614ad.bindPopup(popup_0f9a022a1bf3145eea358ed5e43e547d)
+        ;
+
+        
+    
+    
+            marker_5887b1e15cbf1df65cacd5d4d9d614ad.bindTooltip(
+                `<div>
+                     V3-3: Karen_Langata_3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5887b1e15cbf1df65cacd5d4d9d614ad.setIcon(div_icon_46a86a3e7060cee20e2c22a7783e22fb);
+            
+    
+            var layer_control_0cdecd7ee5b6a6c264b5c193fdc141f2_layers = {
+                base_layers : {
+                    "Esri Light Gray" : tile_layer_5a77744ed5b591000b45b065e3162118,
+                    "Esri Street Map" : tile_layer_14201a75ff3477220818c717e4c8fa23,
+                },
+                overlays :  {
+                    "Congested corridors" : feature_group_6ecac54faca7c2e9502c03ac5b7f72dc,
+                    "Optimizer" : feature_group_f0d317675a66c0b3412ced08d68a1e85,
+                    "H1 zone sweep (simulated)" : feature_group_cc1727914a7c36927416897da525f250,
+                },
+            };
+            let layer_control_0cdecd7ee5b6a6c264b5c193fdc141f2 = L.control.layers(
+                layer_control_0cdecd7ee5b6a6c264b5c193fdc141f2_layers.base_layers,
+                layer_control_0cdecd7ee5b6a6c264b5c193fdc141f2_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_2f1cdbb1fdfd0eacf0450527dd625eda);
+
+        
+    
+            map_2f1cdbb1fdfd0eacf0450527dd625eda.fitBounds(
+                [[-1.305, 36.85], [-1.260235, 36.806577], [-1.276875, 36.80485], [-1.2738, 36.821395], [-1.287742, 36.78819], [-1.284077, 36.798598], [-1.308241, 36.79137], [-1.333802, 36.740221], [-1.346284, 36.705977], [-1.325639, 36.716443], [-1.275829, 36.822153], [-1.27714, 36.821897], [-1.279676, 36.826314], [-1.308377, 36.769625], [-1.290641, 36.74829], [-1.308312, 36.772297], [-1.204499, 36.792589], [-1.218003, 36.80463], [-1.198769, 36.789961]],
+                {"padding": [20, 20]}
+            );
+        
+</script>
+</html>
