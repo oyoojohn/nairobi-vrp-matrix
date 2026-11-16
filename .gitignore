@@ -5,3 +5,4 @@ __pycache__/
 config_overwritten*
 .DS_Store
 *.bak
+_publish/
