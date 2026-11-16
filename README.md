@@ -2,7 +2,7 @@
 
 A dynamic vehicle-routing engine for Nairobi last-mile distribution, built with Google OR-Tools in Google Colab. It plans a static route, simulates a traffic disruption on a congested corridor (Mombasa Road, Thika Road, Westlands, and others), re-solves mid-day, and benchmarks the result against simulated dispatcher rules. All data is synthetic.
 
-**Start here:** [`REPORT.md`](REPORT.md) (two pages), then the [map gallery](https://oyoojohn.github.io/nairobi-vrp-matrix/).
+**Start here:** [`REPORT.md`](REPORT.md) (two pages), then the [map gallery](https://oyoojohn.github.io/nairobi-vrp-matrix/maps/gallery/index.html).
 
 ## Headline results
 
